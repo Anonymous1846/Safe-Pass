@@ -90,7 +90,7 @@ namespace SafePass
             }
             if (!userSignUp.Text.Equals(String.Empty) && !emailSignUp.Text.Equals(String.Empty) && !passSignUp.Text.Equals(String.Empty))
             {
-                MessageBox.Show("Working !", "Working !");
+                MessageBox.Show("Working","Working !");
             }
         }
 

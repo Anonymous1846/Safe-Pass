@@ -65,7 +65,10 @@ namespace SafePass
             }
             if (!usernameTextBox.Text.Equals(String.Empty)&&!passwordTextBox.Text.Equals(String.Empty))
             {
-                MessageBox.Show("Working !","Working !");
+                SafePassMain safePassMain = new SafePassMain();
+                this.Hide();
+                safePassMain.ShowDialog();
+                this.Close();
             }
         }
         //When the password textbox is invoked the warning will go 
