@@ -23,8 +23,8 @@ namespace SafePass
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form1 login = new Form1();
-            this.Hide();    
-            login.ShowDialog();  
+            this.Hide();
+            login.ShowDialog();
             this.Close();
         }
 
@@ -73,5 +73,41 @@ namespace SafePass
             signUpBtn.ForeColor = Color.Black;
             signUpBtn.BackColor = Color.White;
         }
+        //First of all we check the null values in the Text boxes !
+        private void signUpBtn_Click(object sender, EventArgs e)
+        {
+            if (userSignUp.Text.Equals(String.Empty))
+            {
+                usernameSignWarn.Text = "Enter Username";
+            }
+            if (emailSignUp.Text.Equals(String.Empty))
+            {
+                emailSignWarn.Text = "Enter a Valid Email";
+            }
+            if (passSignUp.Text.Equals(String.Empty))
+            {
+                passSignWarn.Text = "Enter A Valid Password !";
+            }
+            if (!userSignUp.Text.Equals(String.Empty) && !emailSignUp.Text.Equals(String.Empty) && !passSignUp.Text.Equals(String.Empty))
+            {
+                MessageBox.Show("Working !", "Working !");
+            }
+        }
+
+        private void passSignUp_KeyDown(object sender, KeyEventArgs e)
+        {
+            passSignWarn.Text = "";
+        }
+
+        private void emailSignUp_KeyDown(object sender, KeyEventArgs e)
+        {
+            emailSignWarn.Text = "";
+        }
+
+        private void userSignUp_KeyDown(object sender, KeyEventArgs e)
+        {
+            usernameSignWarn.Text = "";
+        }
+
     }
 }

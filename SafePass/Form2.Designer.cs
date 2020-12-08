@@ -42,6 +42,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.usernameSignWarn = new System.Windows.Forms.Label();
+            this.emailSignWarn = new System.Windows.Forms.Label();
+            this.passSignWarn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +89,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.passSignWarn);
+            this.panel2.Controls.Add(this.emailSignWarn);
+            this.panel2.Controls.Add(this.usernameSignWarn);
             this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.signUpBtn);
@@ -136,6 +142,7 @@
             this.signUpBtn.TabIndex = 6;
             this.signUpBtn.Text = "Sign Up";
             this.signUpBtn.UseVisualStyleBackColor = true;
+            this.signUpBtn.Click += new System.EventHandler(this.signUpBtn_Click);
             this.signUpBtn.MouseEnter += new System.EventHandler(this.signUpBtn_MouseEnter);
             this.signUpBtn.MouseLeave += new System.EventHandler(this.signUpBtn_MouseLeave);
             this.signUpBtn.MouseHover += new System.EventHandler(this.signUpBtn_MouseHover);
@@ -146,6 +153,7 @@
             this.passSignUp.Name = "passSignUp";
             this.passSignUp.Size = new System.Drawing.Size(500, 22);
             this.passSignUp.TabIndex = 5;
+            this.passSignUp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passSignUp_KeyDown);
             // 
             // emailSignUp
             // 
@@ -153,6 +161,7 @@
             this.emailSignUp.Name = "emailSignUp";
             this.emailSignUp.Size = new System.Drawing.Size(500, 22);
             this.emailSignUp.TabIndex = 4;
+            this.emailSignUp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.emailSignUp_KeyDown);
             // 
             // userSignUp
             // 
@@ -160,6 +169,7 @@
             this.userSignUp.Name = "userSignUp";
             this.userSignUp.Size = new System.Drawing.Size(500, 22);
             this.userSignUp.TabIndex = 3;
+            this.userSignUp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.userSignUp_KeyDown);
             // 
             // label3
             // 
@@ -193,6 +203,33 @@
             this.label1.Size = new System.Drawing.Size(83, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username :";
+            // 
+            // usernameSignWarn
+            // 
+            this.usernameSignWarn.AutoSize = true;
+            this.usernameSignWarn.ForeColor = System.Drawing.Color.Red;
+            this.usernameSignWarn.Location = new System.Drawing.Point(133, 72);
+            this.usernameSignWarn.Name = "usernameSignWarn";
+            this.usernameSignWarn.Size = new System.Drawing.Size(0, 17);
+            this.usernameSignWarn.TabIndex = 9;
+            // 
+            // emailSignWarn
+            // 
+            this.emailSignWarn.AutoSize = true;
+            this.emailSignWarn.ForeColor = System.Drawing.Color.Red;
+            this.emailSignWarn.Location = new System.Drawing.Point(136, 137);
+            this.emailSignWarn.Name = "emailSignWarn";
+            this.emailSignWarn.Size = new System.Drawing.Size(0, 17);
+            this.emailSignWarn.TabIndex = 10;
+            // 
+            // passSignWarn
+            // 
+            this.passSignWarn.AutoSize = true;
+            this.passSignWarn.ForeColor = System.Drawing.Color.Red;
+            this.passSignWarn.Location = new System.Drawing.Point(136, 194);
+            this.passSignWarn.Name = "passSignWarn";
+            this.passSignWarn.Size = new System.Drawing.Size(0, 17);
+            this.passSignWarn.TabIndex = 11;
             // 
             // SignUp
             // 
@@ -230,5 +267,8 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label usernameSignWarn;
+        private System.Windows.Forms.Label passSignWarn;
+        private System.Windows.Forms.Label emailSignWarn;
     }
 }
