@@ -180,6 +180,9 @@
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = true;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
+            this.loginBtn.MouseEnter += new System.EventHandler(this.loginBtn_MouseEnter);
+            this.loginBtn.MouseLeave += new System.EventHandler(this.loginBtn_MouseLeave);
+            this.loginBtn.MouseHover += new System.EventHandler(this.loginBtn_MouseHover);
             // 
             // label1
             // 
@@ -205,6 +208,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

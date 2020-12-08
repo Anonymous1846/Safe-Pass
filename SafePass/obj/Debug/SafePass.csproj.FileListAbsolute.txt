@@ -74,3 +74,4 @@ C:\Users\USER\Documents\Workspace\SafePass\SafePass\bin\Debug\Bunifu.UI.WinForms
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.csproj.CopyComplete
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.SignUp.resources
+C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.SafePassMain.resources

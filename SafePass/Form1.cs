@@ -84,5 +84,25 @@ namespace SafePass
             signUp.ShowDialog();    //Show the New Form
             this.Close();
         }
+
+
+        private void loginBtn_MouseLeave(object sender, EventArgs e)
+        {
+            loginBtn.ForeColor = Color.White;
+            loginBtn.BackColor = Color.Black;
+        }
+
+        private void loginBtn_MouseHover(object sender, EventArgs e)
+        {
+            loginBtn.ForeColor = Color.Black;
+            loginBtn.BackColor = Color.White;
+           
+        }
+        //On Hover Color Change Applied to the Login Button ! 
+        private void loginBtn_MouseEnter(object sender, EventArgs e)
+        {
+            loginBtn.ForeColor = Color.Black;
+            loginBtn.BackColor = Color.White;
+        }
     }
 }
