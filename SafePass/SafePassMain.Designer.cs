@@ -30,18 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SafePassMain));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.passGen = new System.Windows.Forms.Button();
             this.vaultBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.main_panel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.closeButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -49,25 +52,16 @@
             this.panel1.Size = new System.Drawing.Size(930, 47);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // label1
             // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Controls.Add(this.vaultBtn);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 47);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 555);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(200, 47);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(730, 555);
-            this.panel3.TabIndex = 2;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(4, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 19);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Safe Pass v1.0";
             // 
             // closeButton
             // 
@@ -83,22 +77,39 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // button1
+            // panel2
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 13.8F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 110);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Profile";
-            this.button1.UseVisualStyleBackColor = true;
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Controls.Add(this.passGen);
+            this.panel2.Controls.Add(this.vaultBtn);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 47);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 555);
+            this.panel2.TabIndex = 1;
+            // 
+            // passGen
+            // 
+            this.passGen.FlatAppearance.BorderSize = 0;
+            this.passGen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.passGen.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passGen.ForeColor = System.Drawing.Color.White;
+            this.passGen.Location = new System.Drawing.Point(0, 223);
+            this.passGen.Name = "passGen";
+            this.passGen.Size = new System.Drawing.Size(200, 110);
+            this.passGen.TabIndex = 2;
+            this.passGen.Text = "Password Generator";
+            this.passGen.UseVisualStyleBackColor = true;
+            this.passGen.Click += new System.EventHandler(this.passGen_Click);
+            this.passGen.MouseEnter += new System.EventHandler(this.passGen_MouseEnter);
+            this.passGen.MouseLeave += new System.EventHandler(this.passGen_MouseLeave);
             // 
             // vaultBtn
             // 
+            this.vaultBtn.FlatAppearance.BorderSize = 0;
             this.vaultBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vaultBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vaultBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vaultBtn.ForeColor = System.Drawing.Color.White;
             this.vaultBtn.Location = new System.Drawing.Point(0, 109);
             this.vaultBtn.Name = "vaultBtn";
@@ -106,13 +117,39 @@
             this.vaultBtn.TabIndex = 1;
             this.vaultBtn.Text = "Vault";
             this.vaultBtn.UseVisualStyleBackColor = true;
+            this.vaultBtn.MouseEnter += new System.EventHandler(this.vaultBtn_MouseEnter);
+            this.vaultBtn.MouseLeave += new System.EventHandler(this.vaultBtn_MouseLeave);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 110);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Profile";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            // 
+            // main_panel
+            // 
+            this.main_panel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.main_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.main_panel.Location = new System.Drawing.Point(200, 47);
+            this.main_panel.Name = "main_panel";
+            this.main_panel.Size = new System.Drawing.Size(730, 555);
+            this.main_panel.TabIndex = 2;
             // 
             // SafePassMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 602);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.main_panel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -121,6 +158,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -130,9 +168,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel main_panel;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button vaultBtn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button passGen;
     }
 }

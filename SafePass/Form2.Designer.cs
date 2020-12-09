@@ -33,6 +33,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.closeBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.passSignWarn = new System.Windows.Forms.Label();
+            this.emailSignWarn = new System.Windows.Forms.Label();
+            this.usernameSignWarn = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.signUpBtn = new System.Windows.Forms.Button();
@@ -42,9 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.usernameSignWarn = new System.Windows.Forms.Label();
-            this.emailSignWarn = new System.Windows.Forms.Label();
-            this.passSignWarn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -107,6 +107,33 @@
             this.panel2.Size = new System.Drawing.Size(715, 402);
             this.panel2.TabIndex = 1;
             // 
+            // passSignWarn
+            // 
+            this.passSignWarn.AutoSize = true;
+            this.passSignWarn.ForeColor = System.Drawing.Color.Red;
+            this.passSignWarn.Location = new System.Drawing.Point(136, 194);
+            this.passSignWarn.Name = "passSignWarn";
+            this.passSignWarn.Size = new System.Drawing.Size(0, 17);
+            this.passSignWarn.TabIndex = 11;
+            // 
+            // emailSignWarn
+            // 
+            this.emailSignWarn.AutoSize = true;
+            this.emailSignWarn.ForeColor = System.Drawing.Color.Red;
+            this.emailSignWarn.Location = new System.Drawing.Point(136, 137);
+            this.emailSignWarn.Name = "emailSignWarn";
+            this.emailSignWarn.Size = new System.Drawing.Size(0, 17);
+            this.emailSignWarn.TabIndex = 10;
+            // 
+            // usernameSignWarn
+            // 
+            this.usernameSignWarn.AutoSize = true;
+            this.usernameSignWarn.ForeColor = System.Drawing.Color.Red;
+            this.usernameSignWarn.Location = new System.Drawing.Point(133, 72);
+            this.usernameSignWarn.Name = "usernameSignWarn";
+            this.usernameSignWarn.Size = new System.Drawing.Size(0, 17);
+            this.usernameSignWarn.TabIndex = 9;
+            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
@@ -151,6 +178,7 @@
             // 
             this.passSignUp.Location = new System.Drawing.Point(136, 160);
             this.passSignUp.Name = "passSignUp";
+            this.passSignUp.PasswordChar = '*';
             this.passSignUp.Size = new System.Drawing.Size(500, 22);
             this.passSignUp.TabIndex = 5;
             this.passSignUp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passSignUp_KeyDown);
@@ -203,33 +231,6 @@
             this.label1.Size = new System.Drawing.Size(83, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username :";
-            // 
-            // usernameSignWarn
-            // 
-            this.usernameSignWarn.AutoSize = true;
-            this.usernameSignWarn.ForeColor = System.Drawing.Color.Red;
-            this.usernameSignWarn.Location = new System.Drawing.Point(133, 72);
-            this.usernameSignWarn.Name = "usernameSignWarn";
-            this.usernameSignWarn.Size = new System.Drawing.Size(0, 17);
-            this.usernameSignWarn.TabIndex = 9;
-            // 
-            // emailSignWarn
-            // 
-            this.emailSignWarn.AutoSize = true;
-            this.emailSignWarn.ForeColor = System.Drawing.Color.Red;
-            this.emailSignWarn.Location = new System.Drawing.Point(136, 137);
-            this.emailSignWarn.Name = "emailSignWarn";
-            this.emailSignWarn.Size = new System.Drawing.Size(0, 17);
-            this.emailSignWarn.TabIndex = 10;
-            // 
-            // passSignWarn
-            // 
-            this.passSignWarn.AutoSize = true;
-            this.passSignWarn.ForeColor = System.Drawing.Color.Red;
-            this.passSignWarn.Location = new System.Drawing.Point(136, 194);
-            this.passSignWarn.Name = "passSignWarn";
-            this.passSignWarn.Size = new System.Drawing.Size(0, 17);
-            this.passSignWarn.TabIndex = 11;
             // 
             // SignUp
             // 

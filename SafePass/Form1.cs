@@ -113,6 +113,7 @@ namespace SafePass
             loginBtn.ForeColor = Color.Black;
             loginBtn.BackColor = Color.White;
         }
+
         //End of Hover Color Change for The Login Button !
     }
 }
