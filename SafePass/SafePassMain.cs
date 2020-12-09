@@ -12,6 +12,8 @@ namespace SafePass
 {
     public partial class SafePassMain : Form
     {
+        bool the_mouse_is_down;
+        Point offset;
         public SafePassMain()
         {
             InitializeComponent();
@@ -41,6 +43,7 @@ namespace SafePass
         //Button Color change for all Buttons !
         private void passGen_Click(object sender, EventArgs e)
         {
+            //The User Control for Password Generator will Pop up !
 
         }
         //Button Color Back to normal when the mouse leaves Events !
@@ -62,5 +65,28 @@ namespace SafePass
             passGen.BackColor = Color.Black;
         }
         //End of Mouse Leave Events !
+        //Begining of the Drag Events for the Panel 
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            //For Moving the Form, as The Form is Borderless we have to change the positin explicitly!
+            if (the_mouse_is_down)
+            {
+                Point current_point = PointToScreen(e.Location);
+                Location = new Point(current_point.X - offset.X, current_point.Y - offset.Y);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            the_mouse_is_down = false;
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            //Current Position when mouse is Down
+            offset.X = e.X;
+            offset.Y = e.Y;
+            the_mouse_is_down = true;
+        }
     }
 }
