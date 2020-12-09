@@ -168,6 +168,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PassGen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PassGen.Designer.cs">
+      <DependentUpon>PassGen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vault.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vault.Designer.cs">
+      <DependentUpon>Vault.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +198,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PassGen.resx">
+      <DependentUpon>PassGen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vault.resx">
+      <DependentUpon>Vault.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

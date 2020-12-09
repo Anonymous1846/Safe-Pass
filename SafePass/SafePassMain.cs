@@ -44,7 +44,16 @@ namespace SafePass
         private void passGen_Click(object sender, EventArgs e)
         {
             //The User Control for Password Generator will Pop up !
-
+            if (!main_panel.Controls.Contains(PassGen.PasGenInstance))
+            {
+                main_panel.Controls.Add(PassGen.PasGenInstance);
+                PassGen.PasGenInstance.Dock = DockStyle.Fill;
+                PassGen.PasGenInstance.BringToFront();
+            }
+            else
+            {
+                PassGen.PasGenInstance.BringToFront();
+            }
         }
         //Button Color Back to normal when the mouse leaves Events !
         private void button1_MouseLeave(object sender, EventArgs e)
