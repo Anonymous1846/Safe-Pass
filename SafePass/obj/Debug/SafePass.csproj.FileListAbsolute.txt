@@ -89,3 +89,6 @@ C:\Users\USER\Documents\Workspace\SafePass\SafePass\bin\Debug\System.Runtime.Com
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\bin\Debug\MySql.Data.xml
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.exe.config
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.PassGen.resources
+C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.csprojAssemblyReference.cache
+C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.Vault.resources
+C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.Profile.resources

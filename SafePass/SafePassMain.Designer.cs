@@ -120,6 +120,7 @@
             this.vaultBtn.TabIndex = 1;
             this.vaultBtn.Text = "Vault";
             this.vaultBtn.UseVisualStyleBackColor = true;
+            this.vaultBtn.Click += new System.EventHandler(this.vaultBtn_Click);
             this.vaultBtn.MouseEnter += new System.EventHandler(this.vaultBtn_MouseEnter);
             this.vaultBtn.MouseLeave += new System.EventHandler(this.vaultBtn_MouseLeave);
             // 
@@ -135,6 +136,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Profile";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
@@ -160,6 +162,7 @@
             this.Name = "SafePassMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".";
+            this.Load += new System.EventHandler(this.SafePassMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -55,6 +55,35 @@ namespace SafePass
                 PassGen.PasGenInstance.BringToFront();
             }
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            //The User Control for Profile  will Pop up !
+            if (!main_panel.Controls.Contains(Profile.ProfileInstance))
+            {
+                main_panel.Controls.Add(Profile.ProfileInstance);
+                Profile.ProfileInstance.Dock = DockStyle.Fill;
+                Profile.ProfileInstance.BringToFront();
+            }
+            else
+            {
+                Profile.ProfileInstance.BringToFront();
+            }
+        }
+        private void vaultBtn_Click(object sender, EventArgs e)
+        {
+            //The User Control for Vault will Pop up !
+            if (!main_panel.Controls.Contains(Vault.VaultInstance))
+            {
+                main_panel.Controls.Add(Vault.VaultInstance);
+                Vault.VaultInstance.Dock = DockStyle.Fill;
+                Vault.VaultInstance.BringToFront();
+            }
+            else
+            {
+                Vault.VaultInstance.BringToFront();
+            }
+        }
         //Button Color Back to normal when the mouse leaves Events !
         private void button1_MouseLeave(object sender, EventArgs e)
         {
@@ -96,6 +125,21 @@ namespace SafePass
             offset.X = e.X;
             offset.Y = e.Y;
             the_mouse_is_down = true;
+        }
+
+        private void SafePassMain_Load(object sender, EventArgs e)
+        {
+            //The User Control for Profile  will Pop up !
+            if (!main_panel.Controls.Contains(Profile.ProfileInstance))
+            {
+                main_panel.Controls.Add(Profile.ProfileInstance);
+                Profile.ProfileInstance.Dock = DockStyle.Fill;
+                Profile.ProfileInstance.BringToFront();
+            }
+            else
+            {
+                Profile.ProfileInstance.BringToFront();
+            }
         }
     }
 }

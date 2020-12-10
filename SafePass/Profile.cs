@@ -10,23 +10,24 @@ using System.Windows.Forms;
 
 namespace SafePass
 {
-    public partial class Vault : UserControl
+    public partial class Profile : UserControl
     {
-        private static Vault vaultInstance;
-        public static Vault VaultInstance
-        {
-            //Getting the Instance !
+        private static Profile profileInstance;
+        public static Profile ProfileInstance {
             get
             {
-                if (vaultInstance == null)
-                    vaultInstance = new Vault();
-                return vaultInstance;
-
+                if (profileInstance == null)
+                
+                    profileInstance = new Profile();
+                    return profileInstance;
+                
             }
         }
-        public Vault()
+        public Profile()
         {
             InitializeComponent();
         }
+
+        
     }
 }

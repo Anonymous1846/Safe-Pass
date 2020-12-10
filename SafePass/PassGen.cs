@@ -47,7 +47,7 @@ namespace SafePass
             //A String variable with null is set at first to store the password 
             String newPassword = "";
             //The Size of the new password is set to the Current Scroll Value and May be Subjected to change !
-            int sizeOfThePassword = (passwordStrengthMeter.Value)/4;
+            int sizeOfThePassword = (passwordStrengthMeter.Value)/3;
             //A Character is randomly chosen from the allPossibleString and Appended to the newPassword String 
             for (int i=0;i<sizeOfThePassword;i++)
             {
