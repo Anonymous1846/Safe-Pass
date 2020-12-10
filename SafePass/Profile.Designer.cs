@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.userProfileInfo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.editBtn = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.emailLabel = new System.Windows.Forms.Label();
             this.lastUpdate = new System.Windows.Forms.Label();
+            this.currentTime = new System.Windows.Forms.Label();
+            this.currTime = new System.Windows.Forms.Label();
+            this.startTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // userProfileInfo
@@ -81,16 +85,16 @@
             this.editBtn.Text = "Edit";
             this.editBtn.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // emailLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(205, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 19);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "My Email";
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.ForeColor = System.Drawing.Color.White;
+            this.emailLabel.Location = new System.Drawing.Point(205, 96);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(73, 19);
+            this.emailLabel.TabIndex = 4;
+            this.emailLabel.Text = "My Email";
             // 
             // lastUpdate
             // 
@@ -103,13 +107,37 @@
             this.lastUpdate.TabIndex = 5;
             this.lastUpdate.Text = "My Password";
             // 
+            // currentTime
+            // 
+            this.currentTime.Location = new System.Drawing.Point(0, 0);
+            this.currentTime.Name = "currentTime";
+            this.currentTime.Size = new System.Drawing.Size(100, 23);
+            this.currentTime.TabIndex = 7;
+            // 
+            // currTime
+            // 
+            this.currTime.AutoSize = true;
+            this.currTime.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currTime.ForeColor = System.Drawing.Color.White;
+            this.currTime.Location = new System.Drawing.Point(53, 301);
+            this.currTime.Name = "currTime";
+            this.currTime.Size = new System.Drawing.Size(0, 19);
+            this.currTime.TabIndex = 6;
+            // 
+            // startTimer
+            // 
+            this.startTimer.Enabled = true;
+            this.startTimer.Tick += new System.EventHandler(this.startTimer_Tick);
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.currTime);
+            this.Controls.Add(this.currentTime);
             this.Controls.Add(this.lastUpdate);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.editBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -127,7 +155,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button editBtn;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label lastUpdate;
+        private System.Windows.Forms.Label currentTime;
+        private System.Windows.Forms.Label currTime;
+        private System.Windows.Forms.Timer startTimer;
     }
 }

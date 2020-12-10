@@ -13,6 +13,9 @@ namespace SafePass
     public partial class Profile : UserControl
     {
         private static Profile profileInstance;
+        private String username;
+        Database database;
+        String usernameLabel, email, lastTime;
         public static Profile ProfileInstance {
             get
             {
@@ -27,7 +30,11 @@ namespace SafePass
         {
             InitializeComponent();
         }
+      
 
-        
+        private void startTimer_Tick(object sender, EventArgs e)
+        {
+            currTime.Text = $"Current System Time: {DateTime.Now.ToString()}";
+        }
     }
 }

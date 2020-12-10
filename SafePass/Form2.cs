@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SafePass
@@ -14,6 +14,7 @@ namespace SafePass
     {
         private bool isMouseDown;
         private Point offset;
+        Database database;
 
         public SignUp()
         {
@@ -90,7 +91,25 @@ namespace SafePass
             }
             if (!userSignUp.Text.Equals(String.Empty) && !emailSignUp.Text.Equals(String.Empty) && !passSignUp.Text.Equals(String.Empty))
             {
-                MessageBox.Show("Working","Working !");
+               
+                database = new Database();
+                
+                //Checking whether the user already exists 
+                if (database.checkForUser(userSignUp.Text))
+                {
+                    usernameSignWarn.Text = "User name Already Exits !";
+                }
+                else
+                {
+                    if (database.addUserToDatabase(userSignUp.Text,emailSignUp.Text,passSignUp.Text,DateTime.Now.ToString()))
+                    {
+                        MessageBox.Show("User Added to Database Now Login !");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Some Thing Went Wring ! !");
+                    }
+                }
             }
         }
 

@@ -12,10 +12,12 @@ namespace SafePass
 {
     public partial class Form1 : Form
     {
+        
         //Boolean value to check whether the mouse key is pressed or not !
         bool is_mouse_down;
         //To record the current point/location
         Point offset;
+        Database database;
         public Form1()
         {
             InitializeComponent();
@@ -65,10 +67,26 @@ namespace SafePass
             }
             if (!usernameTextBox.Text.Equals(String.Empty)&&!passwordTextBox.Text.Equals(String.Empty))
             {
-                SafePassMain safePassMain = new SafePassMain();
-                this.Hide();
-                safePassMain.ShowDialog();
-                this.Close();
+                database = new Database();
+                if (database.checkForUser(usernameTextBox.Text))
+                {
+                    if (database.authForUser(usernameTextBox.Text,passwordTextBox.Text))
+                    {
+                        SafePassMain safePassMain = new SafePassMain();
+                        this.Hide();
+                        safePassMain.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        passError.Text = "Invalid Password !";
+                    }
+                }
+                else
+                {
+                    usernameError.Text = "Username Doesn't Exixts !";
+                }
+                
             }
         }
         //When the password textbox is invoked the warning will go 

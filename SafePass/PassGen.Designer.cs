@@ -31,11 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.generatedPasswordTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.toggle_visibility = new System.Windows.Forms.LinkLabel();
             this.currentStrength = new System.Windows.Forms.Label();
             this.passwordStrengthMeter = new System.Windows.Forms.HScrollBar();
             this.copyToClipBoard = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.toggle_visibility = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +60,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.toggle_visibility);
             this.groupBox1.Controls.Add(this.currentStrength);
             this.groupBox1.Controls.Add(this.passwordStrengthMeter);
@@ -72,6 +74,17 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Your Password is Ready";
+            // 
+            // toggle_visibility
+            // 
+            this.toggle_visibility.AutoSize = true;
+            this.toggle_visibility.Location = new System.Drawing.Point(250, 117);
+            this.toggle_visibility.Name = "toggle_visibility";
+            this.toggle_visibility.Size = new System.Drawing.Size(116, 18);
+            this.toggle_visibility.TabIndex = 6;
+            this.toggle_visibility.TabStop = true;
+            this.toggle_visibility.Text = "Toggle Visibility";
+            this.toggle_visibility.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.toggle_visibility_LinkClicked);
             // 
             // currentStrength
             // 
@@ -106,21 +119,20 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(98, 363);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(330, 141);
+            this.label2.Size = new System.Drawing.Size(323, 63);
             this.label2.TabIndex = 6;
             this.label2.Text = "Using the password generator is simple, just drag to increase the password streng" +
     "th and it will give you a strong password.\r\n";
             // 
-            // toggle_visibility
+            // label3
             // 
-            this.toggle_visibility.AutoSize = true;
-            this.toggle_visibility.Location = new System.Drawing.Point(250, 117);
-            this.toggle_visibility.Name = "toggle_visibility";
-            this.toggle_visibility.Size = new System.Drawing.Size(116, 18);
-            this.toggle_visibility.TabIndex = 6;
-            this.toggle_visibility.TabStop = true;
-            this.toggle_visibility.Text = "Toggle Visibility";
-            this.toggle_visibility.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.toggle_visibility_LinkClicked);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(66, 341);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(222, 19);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Minimum Password Length : 8";
             // 
             // PassGen
             // 
@@ -149,5 +161,6 @@
         private System.Windows.Forms.Label currentStrength;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel toggle_visibility;
+        private System.Windows.Forms.Label label3;
     }
 }
