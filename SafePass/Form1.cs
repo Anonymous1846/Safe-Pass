@@ -18,6 +18,7 @@ namespace SafePass
         //To record the current point/location
         Point offset;
         Database database;
+        public static String username = null;
         public Form1()
         {
             InitializeComponent();
@@ -72,7 +73,8 @@ namespace SafePass
                 {
                     if (database.authForUser(usernameTextBox.Text,passwordTextBox.Text))
                     {
-                        SafePassMain safePassMain = new SafePassMain();
+                        username = usernameTextBox.Text;
+                        SafePassMain safePassMain = new SafePassMain(usernameTextBox.Text);
                         this.Hide();
                         safePassMain.ShowDialog();
                         this.Close();

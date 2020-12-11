@@ -47,9 +47,9 @@
             this.userProfileInfo.ForeColor = System.Drawing.Color.White;
             this.userProfileInfo.Location = new System.Drawing.Point(48, 24);
             this.userProfileInfo.Name = "userProfileInfo";
-            this.userProfileInfo.Size = new System.Drawing.Size(234, 26);
+            this.userProfileInfo.Size = new System.Drawing.Size(17, 26);
             this.userProfileInfo.TabIndex = 0;
-            this.userProfileInfo.Text = "User Profile Infomation";
+            this.userProfileInfo.Text = ".";
             // 
             // label1
             // 
@@ -144,6 +144,7 @@
             this.Controls.Add(this.userProfileInfo);
             this.Name = "Profile";
             this.Size = new System.Drawing.Size(730, 555);
+            this.Load += new System.EventHandler(this.Profile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

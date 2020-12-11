@@ -26,9 +26,21 @@ namespace SafePass
                 
             }
         }
+
+        private void Profile_Load(object sender, EventArgs e)
+        {
+            emailLabel.Text = email;
+            lastUpdate.Text = lastTime;
+            userProfileInfo.Text = $"{usernameLabel} Profile Information.";
+        }
+
         public Profile()
         {
             InitializeComponent();
+            database = new Database();
+            usernameLabel = database.getUserInformation(Form1.username)[0];
+            email = database.getUserInformation(Form1.username)[1];
+            lastTime = database.getUserInformation(Form1.username)[3];
         }
       
 

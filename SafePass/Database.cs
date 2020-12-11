@@ -82,7 +82,7 @@ namespace SafePass
         public String [] getUserInformation(String username)
         {
             String[] userinfo = new string[4];
-            using (MySqlCommand mySqlCommandForReading = new MySqlCommand("select * from users where username ='" + username, mySqlConnection))
+            using (MySqlCommand mySqlCommandForReading = new MySqlCommand("select * from users where username ='" + username+"'", mySqlConnection))
             {
                 using (var usernameReader = mySqlCommandForReading.ExecuteReader())
                 {
