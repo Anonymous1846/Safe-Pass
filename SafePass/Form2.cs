@@ -101,7 +101,8 @@ namespace SafePass
                 }
                 else
                 {
-                    if (database.addUserToDatabase(userSignUp.Text,emailSignUp.Text,passSignUp.Text,DateTime.Now.ToString()))
+                    String passwordEncrypted = new DataEncryptPassword(passSignUp.Text).encryptData();
+                    if (database.addUserToDatabase(userSignUp.Text,emailSignUp.Text,passwordEncrypted,DateTime.Now.ToString()))
                     {
                         MessageBox.Show("User Added to Database Now Login !");
                     }

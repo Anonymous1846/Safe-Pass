@@ -85,7 +85,7 @@
             this.confirmPasswordEditUpdate.PasswordChar = '*';
             this.confirmPasswordEditUpdate.Size = new System.Drawing.Size(360, 22);
             this.confirmPasswordEditUpdate.TabIndex = 3;
-            this.confirmPasswordEditUpdate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.confirmPasswordEditUpdate_KeyDown);
+            this.confirmPasswordEditUpdate.TextChanged += new System.EventHandler(this.confirmPasswordEditUpdate_TextChanged);
             // 
             // passwordEditUpdate
             // 
@@ -94,6 +94,7 @@
             this.passwordEditUpdate.PasswordChar = '*';
             this.passwordEditUpdate.Size = new System.Drawing.Size(360, 22);
             this.passwordEditUpdate.TabIndex = 4;
+            this.passwordEditUpdate.TextChanged += new System.EventHandler(this.passwordEditUpdate_TextChanged);
             // 
             // emailEditUpdate
             // 
@@ -125,6 +126,8 @@
             this.upBtn.Text = "Update ";
             this.upBtn.UseVisualStyleBackColor = true;
             this.upBtn.Click += new System.EventHandler(this.upBtn_Click);
+            this.upBtn.MouseEnter += new System.EventHandler(this.upBtn_MouseEnter);
+            this.upBtn.MouseLeave += new System.EventHandler(this.upBtn_MouseLeave);
             // 
             // delBtn
             // 
@@ -138,6 +141,8 @@
             this.delBtn.Text = "Delete";
             this.delBtn.UseVisualStyleBackColor = true;
             this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
+            this.delBtn.MouseEnter += new System.EventHandler(this.delBtn_MouseEnter);
+            this.delBtn.MouseLeave += new System.EventHandler(this.delBtn_MouseLeave);
             // 
             // closeEdit
             // 
@@ -181,9 +186,8 @@
             this.passwordsDontMatchLabel.ForeColor = System.Drawing.Color.Red;
             this.passwordsDontMatchLabel.Location = new System.Drawing.Point(187, 212);
             this.passwordsDontMatchLabel.Name = "passwordsDontMatchLabel";
-            this.passwordsDontMatchLabel.Size = new System.Drawing.Size(75, 17);
+            this.passwordsDontMatchLabel.Size = new System.Drawing.Size(0, 17);
             this.passwordsDontMatchLabel.TabIndex = 12;
-            this.passwordsDontMatchLabel.Text = "passwords";
             this.passwordsDontMatchLabel.Visible = false;
             // 
             // EdituserProfile

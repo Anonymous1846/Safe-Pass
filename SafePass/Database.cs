@@ -29,6 +29,18 @@ namespace SafePass
             
            
         }
+        //Method to Delete Teh user From the Data base !
+        public Boolean deleteuser(string username)
+        {
+            String sql_for_delete = "delete from users where username = '"+username+"'";
+            using (MySqlCommand mySqlCommand = new MySqlCommand(sql_for_delete, mySqlConnection))
+            {
+               
+                    return mySqlCommand.ExecuteNonQuery()==1;
+                
+            }
+        }
+
         //Selecting the User from the Database and also used to check whether the user is present in the 
         //Db so that it is to be decided whether he/she is to be added or not !
         public Boolean checkForUser(String username)

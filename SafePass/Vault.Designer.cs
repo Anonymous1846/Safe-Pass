@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.usernameForVault = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // usernameForVault
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(47, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "User Password Vault";
+            this.usernameForVault.AutoSize = true;
+            this.usernameForVault.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameForVault.ForeColor = System.Drawing.Color.White;
+            this.usernameForVault.Location = new System.Drawing.Point(47, 25);
+            this.usernameForVault.Name = "usernameForVault";
+            this.usernameForVault.Size = new System.Drawing.Size(205, 26);
+            this.usernameForVault.TabIndex = 0;
+            this.usernameForVault.Text = "User Password Vault";
             // 
             // Vault
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.usernameForVault);
             this.Name = "Vault";
             this.Size = new System.Drawing.Size(730, 555);
+            this.Load += new System.EventHandler(this.Vault_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -57,6 +58,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label usernameForVault;
     }
 }

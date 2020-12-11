@@ -28,5 +28,10 @@ namespace SafePass
         {
             InitializeComponent();
         }
+        //Shows the usernam as soon as the Form Loads/user Control Loads !
+        private void Vault_Load(object sender, EventArgs e)
+        {
+            usernameForVault.Text = $"{Form1.username}'s Password Vault";
+        }
     }
 }

@@ -71,7 +71,7 @@ namespace SafePass
                 database = new Database();
                 if (database.checkForUser(usernameTextBox.Text))
                 {
-                    if (database.authForUser(usernameTextBox.Text,passwordTextBox.Text))
+                    if (database.authForUser(usernameTextBox.Text,new DataEncryptPassword(passwordTextBox.Text).encryptData()))
                     {
                         username = usernameTextBox.Text;
                         SafePassMain safePassMain = new SafePassMain();

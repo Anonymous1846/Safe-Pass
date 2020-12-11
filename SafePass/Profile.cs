@@ -52,8 +52,10 @@ namespace SafePass
         //Opening the Form for Updating the User Information !
         private void editBtn_Click(object sender, EventArgs e)
         {
+       //Opens the Profile Edit Option Without Closing The Current Application !
             EdituserProfile edituserProfile = new EdituserProfile();
-            edituserProfile.Show();
+            edituserProfile.ShowDialog();
+
         }
 
         public Profile()
