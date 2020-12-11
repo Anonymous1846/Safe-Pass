@@ -74,7 +74,7 @@ namespace SafePass
                     if (database.authForUser(usernameTextBox.Text,passwordTextBox.Text))
                     {
                         username = usernameTextBox.Text;
-                        SafePassMain safePassMain = new SafePassMain(usernameTextBox.Text);
+                        SafePassMain safePassMain = new SafePassMain();
                         this.Hide();
                         safePassMain.ShowDialog();
                         this.Close();

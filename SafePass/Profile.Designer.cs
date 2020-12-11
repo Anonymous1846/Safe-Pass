@@ -84,6 +84,9 @@
             this.editBtn.TabIndex = 3;
             this.editBtn.Text = "Edit";
             this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
+            this.editBtn.MouseEnter += new System.EventHandler(this.editBtn_MouseEnter);
+            this.editBtn.MouseLeave += new System.EventHandler(this.editBtn_MouseLeave);
             // 
             // emailLabel
             // 

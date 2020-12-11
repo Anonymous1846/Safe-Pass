@@ -15,7 +15,7 @@ namespace SafePass
         bool the_mouse_is_down;
         Point offset;
          
-        public SafePassMain(String username)
+        public SafePassMain()
         {
             InitializeComponent();
         }

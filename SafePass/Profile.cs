@@ -13,12 +13,13 @@ namespace SafePass
     public partial class Profile : UserControl
     {
         private static Profile profileInstance;
-        private String username;
+       
         Database database;
-        String usernameLabel, email, lastTime;
+        String username, email, lastTime;
         public static Profile ProfileInstance {
             get
             {
+                //if the profile User control instance is not created then new one is created !
                 if (profileInstance == null)
                 
                     profileInstance = new Profile();
@@ -29,16 +30,38 @@ namespace SafePass
 
         private void Profile_Load(object sender, EventArgs e)
         {
+            //When The Profile is Loaded for the first time the user Information is Displayed !
             emailLabel.Text = email;
+            //Last Time He/She Updated the Profile !
             lastUpdate.Text = lastTime;
-            userProfileInfo.Text = $"{usernameLabel} Profile Information.";
+            //Name of the Logged in User !
+            userProfileInfo.Text = $"{username} Profile Information.";
+        }
+
+        private void editBtn_MouseEnter(object sender, EventArgs e)
+        {
+            editBtn.ForeColor = Color.Black;
+            editBtn.BackColor = Color.White;
+        }
+
+        private void editBtn_MouseLeave(object sender, EventArgs e)
+        {
+            editBtn.ForeColor = Color.White;
+            editBtn.BackColor = Color.Black;
+        }
+        //Opening the Form for Updating the User Information !
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            EdituserProfile edituserProfile = new EdituserProfile();
+            edituserProfile.Show();
         }
 
         public Profile()
         {
             InitializeComponent();
             database = new Database();
-            usernameLabel = database.getUserInformation(Form1.username)[0];
+            //Getting the Username, Email and Last Updation Information !
+            username = database.getUserInformation(Form1.username)[0];
             email = database.getUserInformation(Form1.username)[1];
             lastTime = database.getUserInformation(Form1.username)[3];
         }
@@ -46,6 +69,7 @@ namespace SafePass
 
         private void startTimer_Tick(object sender, EventArgs e)
         {
+            //Updating the time at an interval of 100 milliseconds !
             currTime.Text = $"Current System Time: {DateTime.Now.ToString()}";
         }
     }

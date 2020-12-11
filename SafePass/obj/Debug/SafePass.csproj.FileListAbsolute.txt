@@ -92,3 +92,4 @@ C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.PassGen.r
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.csprojAssemblyReference.cache
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.Vault.resources
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.Profile.resources
+C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.EdituserProfile.resources

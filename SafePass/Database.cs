@@ -79,6 +79,7 @@ namespace SafePass
             }
                 return flag;
         }
+        //getting the User credentials like Password, email, and username !
         public String [] getUserInformation(String username)
         {
             String[] userinfo = new string[4];
@@ -97,5 +98,20 @@ namespace SafePass
             }
             return userinfo;
         }
+        //Updating the User Credentials !
+        public Boolean updateUser(String username, String email, String password, String timeStamp)
+        {
+            bool flag = false;
+            String sql_for_update = "UPDATE users SET  email='"+email+"', password='"+password+"', time_stamp ='"+timeStamp+"' where username='"+username+"'";
+            using (MySqlCommand mySqlCommand = new MySqlCommand(sql_for_update, mySqlConnection))
+            {
+                if (mySqlCommand.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+            }
+            return flag;
+        }
+
     }
 }

@@ -159,6 +159,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="EdituserProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EdituserProfile.Designer.cs">
+      <DependentUpon>EdituserProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="SafePassMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     <Compile Include="Vault.Designer.cs">
       <DependentUpon>Vault.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EdituserProfile.resx">
+      <DependentUpon>EdituserProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
