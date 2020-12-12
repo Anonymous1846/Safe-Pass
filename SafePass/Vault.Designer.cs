@@ -60,6 +60,7 @@
             this.searchNickName.Name = "searchNickName";
             this.searchNickName.Size = new System.Drawing.Size(245, 22);
             this.searchNickName.TabIndex = 1;
+            this.searchNickName.TextChanged += new System.EventHandler(this.searchNickName_TextChanged);
             // 
             // label1
             // 
@@ -95,6 +96,7 @@
             this.passwordGrid.RowTemplate.Height = 24;
             this.passwordGrid.Size = new System.Drawing.Size(677, 339);
             this.passwordGrid.TabIndex = 0;
+            this.passwordGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.passwordGrid_CellClick);
             // 
             // nickname
             // 

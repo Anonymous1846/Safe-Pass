@@ -41,6 +41,7 @@ namespace SafePass
                 if (new Database().addUserPasswordToDatabase(Form1.username,nickName.Text,usernameAdding.Text,new DataEncryptPassword(userPasswordAdding.Text).encryptData(),DateTime.Now.ToString()))
                 {
                     MessageBox.Show("Password Saved Successfully !","Saved Successfully !",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    
                     this.Close();
                 }
                 else

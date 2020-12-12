@@ -138,21 +138,53 @@ namespace SafePass
             }
             return flag;
         }
-        public System.Collections.ArrayList getUserInfo(String username)
+        public System.Collections.ArrayList getUserInfoNickName(String username)
         {
-            System.Collections.ArrayList arrayListOfUser = new System.Collections.ArrayList();
-            String sql_select_user_info = "SELECT nickname,email_username,password FROM user_passwords where username='"+username+"'";
+            System.Collections.ArrayList arrayListForNickName = new System.Collections.ArrayList();
+            String sql_select_user_info = "SELECT nickname FROM user_passwords where username='"+username+"'";
             using (MySqlCommand mySqlCommand = new MySqlCommand(sql_select_user_info, mySqlConnection))
             {
                 using (var usernameReader = mySqlCommand.ExecuteReader())
                 {
                     while (usernameReader.Read())
                     {
-                        arrayListOfUser.Add(new UserCredentials(usernameReader.GetString(0),usernameReader.GetString(1),usernameReader.GetString(2)));
+                        arrayListForNickName.Add(usernameReader.GetString(0));
                     }
                 }
             }
-            return arrayListOfUser;
+            return arrayListForNickName;
+        }
+        public System.Collections.ArrayList getUserInfoEmailUsername(String username)
+        {
+            System.Collections.ArrayList arrayListEmailUsername = new System.Collections.ArrayList();
+            String sql_select_user_info = "SELECT email_username FROM user_passwords where username='" + username + "'";
+            using (MySqlCommand mySqlCommand = new MySqlCommand(sql_select_user_info, mySqlConnection))
+            {
+                using (var usernameReader = mySqlCommand.ExecuteReader())
+                {
+                    while (usernameReader.Read())
+                    {
+                        arrayListEmailUsername.Add(usernameReader.GetString(0));
+                    }
+                }
+            }
+            return arrayListEmailUsername;
+        }
+        public System.Collections.ArrayList getUserInfoPasswords(String username)
+        {
+            System.Collections.ArrayList arrayListForPassword = new System.Collections.ArrayList();
+            String sql_select_user_info = "SELECT password FROM user_passwords where username='" + username + "'";
+            using (MySqlCommand mySqlCommand = new MySqlCommand(sql_select_user_info, mySqlConnection))
+            {
+                using (var usernameReader = mySqlCommand.ExecuteReader())
+                {
+                    while (usernameReader.Read())
+                    {
+                        arrayListForPassword.Add(usernameReader.GetString(0));
+                    }
+                }
+            }
+            return arrayListForPassword;
         }
     }
 }
