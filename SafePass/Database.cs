@@ -124,6 +124,19 @@ namespace SafePass
             }
             return flag;
         }
-
+        //Code to add the User Data(Website Pasword to the Database ! the Table name is user_passwords)
+        public Boolean addUserPasswordToDatabase(String username,String nickname, String email_username, String password, String timeStamp)
+        {
+            bool flag = false;
+            String sql_for_insert = "INSERT INTO user_passwords(username,nickname,email_username,password,time_stamp) VALUES ('" + username + "','"+nickname+"' , '" + email_username + "', '" + password + "', '" + timeStamp + "')";
+            using (MySqlCommand mySqlCommand = new MySqlCommand(sql_for_insert, mySqlConnection))
+            {
+                if (mySqlCommand.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+            }
+            return flag;
+        }
     }
 }

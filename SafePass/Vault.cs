@@ -33,5 +33,10 @@ namespace SafePass
         {
             usernameForVault.Text = $"{Form1.username}'s Password Vault";
         }
+        //Show the Form to Add the User Password Details and the Username/Password !
+        private void addPassword_Click(object sender, EventArgs e)
+        {
+            new AddPasswordToDb().Show();
+        }
     }
 }

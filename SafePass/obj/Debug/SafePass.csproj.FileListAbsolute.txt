@@ -93,3 +93,4 @@ C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.csprojAss
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.Vault.resources
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.Profile.resources
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.EdituserProfile.resources
+C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.AddPasswordToDb.resources
