@@ -138,5 +138,21 @@ namespace SafePass
             }
             return flag;
         }
+        public System.Collections.ArrayList getUserInfo(String username)
+        {
+            System.Collections.ArrayList arrayListOfUser = new System.Collections.ArrayList();
+            String sql_select_user_info = "SELECT nickname,email_username,password FROM user_passwords where username='"+username+"'";
+            using (MySqlCommand mySqlCommand = new MySqlCommand(sql_select_user_info, mySqlConnection))
+            {
+                using (var usernameReader = mySqlCommand.ExecuteReader())
+                {
+                    while (usernameReader.Read())
+                    {
+                        arrayListOfUser.Add(new UserCredentials(usernameReader.GetString(0),usernameReader.GetString(1),usernameReader.GetString(2)));
+                    }
+                }
+            }
+            return arrayListOfUser;
+        }
     }
 }

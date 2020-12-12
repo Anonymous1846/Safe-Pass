@@ -32,7 +32,7 @@
             this.searchNickName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.passwordGrid = new System.Windows.Forms.DataGridView();
             this.nickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,7 +40,7 @@
             this.copy = new System.Windows.Forms.DataGridViewButtonColumn();
             this.addPassword = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // usernameForVault
@@ -74,27 +74,27 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.passwordGrid);
             this.panel1.Location = new System.Drawing.Point(30, 165);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(683, 345);
             this.panel1.TabIndex = 3;
             // 
-            // dataGridView1
+            // passwordGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.passwordGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.passwordGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nickname,
             this.Username_Email,
             this.Password,
             this.toggle,
             this.copy});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(677, 339);
-            this.dataGridView1.TabIndex = 0;
+            this.passwordGrid.Location = new System.Drawing.Point(3, 3);
+            this.passwordGrid.Name = "passwordGrid";
+            this.passwordGrid.RowHeadersWidth = 51;
+            this.passwordGrid.RowTemplate.Height = 24;
+            this.passwordGrid.Size = new System.Drawing.Size(677, 339);
+            this.passwordGrid.TabIndex = 0;
             // 
             // nickname
             // 
@@ -119,7 +119,7 @@
             // 
             // toggle
             // 
-            this.toggle.HeaderText = "toggle";
+            this.toggle.HeaderText = "Toggle";
             this.toggle.MinimumWidth = 6;
             this.toggle.Name = "toggle";
             this.toggle.Width = 125;
@@ -158,7 +158,7 @@
             this.Size = new System.Drawing.Size(730, 555);
             this.Load += new System.EventHandler(this.Vault_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,7 +170,7 @@
         private System.Windows.Forms.TextBox searchNickName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView passwordGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn nickname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username_Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
