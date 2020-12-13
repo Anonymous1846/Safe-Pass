@@ -33,12 +33,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.passwordGrid = new System.Windows.Forms.DataGridView();
+            this.addPassword = new System.Windows.Forms.Button();
             this.nickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toggle = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.deletePass = new System.Windows.Forms.DataGridViewLinkColumn();
             this.copy = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.addPassword = new System.Windows.Forms.Button();
+            this.Update = new System.Windows.Forms.DataGridViewLinkColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passwordGrid)).BeginInit();
             this.SuspendLayout();
@@ -88,8 +89,9 @@
             this.nickname,
             this.Username_Email,
             this.Password,
-            this.toggle,
-            this.copy});
+            this.deletePass,
+            this.copy,
+            this.Update});
             this.passwordGrid.Location = new System.Drawing.Point(3, 3);
             this.passwordGrid.Name = "passwordGrid";
             this.passwordGrid.RowHeadersWidth = 51;
@@ -97,6 +99,20 @@
             this.passwordGrid.Size = new System.Drawing.Size(677, 339);
             this.passwordGrid.TabIndex = 0;
             this.passwordGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.passwordGrid_CellClick);
+            this.passwordGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.passwordGrid_CellFormatting);
+            // 
+            // addPassword
+            // 
+            this.addPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addPassword.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addPassword.ForeColor = System.Drawing.Color.White;
+            this.addPassword.Location = new System.Drawing.Point(214, 133);
+            this.addPassword.Name = "addPassword";
+            this.addPassword.Size = new System.Drawing.Size(86, 26);
+            this.addPassword.TabIndex = 4;
+            this.addPassword.Text = "Add";
+            this.addPassword.UseVisualStyleBackColor = true;
+            this.addPassword.Click += new System.EventHandler(this.addPassword_Click);
             // 
             // nickname
             // 
@@ -119,12 +135,12 @@
             this.Password.Name = "Password";
             this.Password.Width = 125;
             // 
-            // toggle
+            // deletePass
             // 
-            this.toggle.HeaderText = "Toggle";
-            this.toggle.MinimumWidth = 6;
-            this.toggle.Name = "toggle";
-            this.toggle.Width = 125;
+            this.deletePass.HeaderText = "Delete";
+            this.deletePass.MinimumWidth = 6;
+            this.deletePass.Name = "deletePass";
+            this.deletePass.Width = 125;
             // 
             // copy
             // 
@@ -133,18 +149,12 @@
             this.copy.Name = "copy";
             this.copy.Width = 125;
             // 
-            // addPassword
+            // Update
             // 
-            this.addPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addPassword.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPassword.ForeColor = System.Drawing.Color.White;
-            this.addPassword.Location = new System.Drawing.Point(214, 133);
-            this.addPassword.Name = "addPassword";
-            this.addPassword.Size = new System.Drawing.Size(86, 26);
-            this.addPassword.TabIndex = 4;
-            this.addPassword.Text = "Add";
-            this.addPassword.UseVisualStyleBackColor = true;
-            this.addPassword.Click += new System.EventHandler(this.addPassword_Click);
+            this.Update.HeaderText = "Update";
+            this.Update.MinimumWidth = 6;
+            this.Update.Name = "Update";
+            this.Update.Width = 125;
             // 
             // Vault
             // 
@@ -173,11 +183,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView passwordGrid;
+        private System.Windows.Forms.Button addPassword;
         private System.Windows.Forms.DataGridViewTextBoxColumn nickname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username_Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
-        private System.Windows.Forms.DataGridViewLinkColumn toggle;
+        private System.Windows.Forms.DataGridViewLinkColumn deletePass;
         private System.Windows.Forms.DataGridViewButtonColumn copy;
-        private System.Windows.Forms.Button addPassword;
+        private System.Windows.Forms.DataGridViewLinkColumn Update;
     }
 }

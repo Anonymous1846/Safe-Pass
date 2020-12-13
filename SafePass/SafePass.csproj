@@ -172,6 +172,12 @@
     <Compile Include="AddPasswordToDb.Designer.cs">
       <DependentUpon>AddPasswordToDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateUserPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateUserPass.Designer.cs">
+      <DependentUpon>UpdateUserPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="SafePassMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateUserPass.resx">
+      <DependentUpon>UpdateUserPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vault.resx">
       <DependentUpon>Vault.cs</DependentUpon>

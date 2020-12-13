@@ -13,9 +13,10 @@ namespace SafePass
 {
     public partial class Vault : UserControl
     {
-        DataView dataviewForSearch;
+       
         Database database;
         private static Vault vaultInstance;
+        public static String NickName;
         public static Vault VaultInstance
         {
             //Getting the Instance !
@@ -31,10 +32,13 @@ namespace SafePass
         {
             InitializeComponent();
             database = new Database();
+           
+           
         }
         //Shows the usernam as soon as the Form Loads/user Control Loads !
         private void Vault_Load(object sender, EventArgs e)
         {
+           
             passwordGrid.Rows.Clear();
             usernameForVault.Text = $"{Form1.username}'s Password Vault";
             DataEncryptPassword data = new DataEncryptPassword();
@@ -49,8 +53,9 @@ namespace SafePass
                 dataGridViewRow.Cells[1].Value = emails_username[i];
                 dataGridViewRow.Cells[2].Value = data.decryptData(passwords[i].ToString());
                 
-                dataGridViewRow.Cells[3].Value = "Toggle";
+                dataGridViewRow.Cells[3].Value = "Delete";
                 dataGridViewRow.Cells[4].Value = "Copy";
+                dataGridViewRow.Cells[5].Value = "Update";
                 passwordGrid.Rows.Add(dataGridViewRow);
             }
             
@@ -71,13 +76,42 @@ namespace SafePass
                 //When the Copy button of the Corresponding row is pressed the password is feteched from the column!
                 Clipboard.SetText(passwordGrid[2,e.RowIndex].Value.ToString());
             }
-        }
+            //If the Delete Cell Option of the Data grid view is Selected then the Corresponding Row will be Deleted Along with the Databse Information !
+            if (e.ColumnIndex==3)
+            {
+                if (database.deleteUserPassword(Form1.username,passwordGrid[0,e.RowIndex].Value.ToString()))
+                {
+                    passwordGrid.Rows.RemoveAt(e.RowIndex);
+                    MessageBox.Show("Password Infomation Deleted !","Deleted !",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Something Went Wrong !", "Error !", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                }
+            }
+            if (e.ColumnIndex==5)
+            {
+                NickName = passwordGrid[0,e.RowIndex].Value.ToString();
+                UpdateUserPass updateUserPass = new UpdateUserPass();
+                updateUserPass.Show();
+            }
+        }
+        
         private void searchNickName_TextChanged(object sender, EventArgs e)
         {
-            dataviewForSearch = passwordGrid.D
-            dataviewForSearch.RowFilter = String.Format("nickname like '%{0}%'",searchNickName.Text);
-            passwordGrid.DataSource = dataviewForSearch.ToTable();
+           // passwordGrid.
         }
+        //Function to show the passwords as *
+        private void passwordGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.Value!=null && e.ColumnIndex==2)
+            {
+                e.Value = new string('*',e.Value.ToString().Length);
+            }
+                    
+        }
+        
+
     }
 }

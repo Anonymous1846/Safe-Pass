@@ -186,5 +186,48 @@ namespace SafePass
             }
             return arrayListForPassword;
         }
+        //Deleteing the User Password from The Database based on the username and nickname
+        public Boolean deleteUserPassword(String username,String nickname)
+        {
+            bool flag = false;
+            String sql_for_delete_password = "DELETE FROM user_passwords WHERE username='"+username+"' and nickname='"+nickname+"'";
+            using (MySqlCommand mySqlCommand = new MySqlCommand(sql_for_delete_password, mySqlConnection))
+            {
+                if (mySqlCommand.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+            }
+            return flag;
+        }
+        public Boolean updateUserPassword(String username, String nickname,String email_username,String password,String time_stamp)
+        {
+           
+            String sql_for_update = "UPDATE user_passwords SET nickname='"+nickname+ "' , email_username='"+email_username+"', password='"+password+"' , time_stamp='"+time_stamp+"'";
+            using (MySqlCommand mySqlCommand = new MySqlCommand(sql_for_update, mySqlConnection))
+            {
+                return mySqlCommand.ExecuteNonQuery() == 1;
+            }
+            
+        }
+        public String[] getUserPasswordInformation(String username,String nickname)
+        {
+            String[] str = new string[5];
+            using (MySqlCommand mySqlCommandForReading = new MySqlCommand("select * from user_passwords where username ='" + username + "' and nickname='"+nickname+"'", mySqlConnection))
+            {
+                using (var usernameReader = mySqlCommandForReading.ExecuteReader())
+                {
+                    while (usernameReader.Read())
+                    {
+                        str[0] = usernameReader.GetString(0);
+                        str[1] = usernameReader.GetString(1);
+                        str[2] = usernameReader.GetString(2);
+                        str[3] = usernameReader.GetString(3);
+                        str[4] = usernameReader.GetString(4);
+                    }
+                }
+            }
+            return str;
+        }
     }
 }
