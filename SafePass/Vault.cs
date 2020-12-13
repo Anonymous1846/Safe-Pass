@@ -18,9 +18,7 @@ namespace SafePass
         Database database;
         private static Vault vaultInstance;
         public static String NickName;
-        private MySqlCommand mySqlCommand;
-        private MySqlDataAdapter mySqlDataAdapter;
-        private DataTable dataTable;
+       
         DataGridViewRow dataGridViewRow;
         public static Vault VaultInstance
         {
@@ -43,8 +41,9 @@ namespace SafePass
         //Shows the usernam as soon as the Form Loads/user Control Loads !
         public void Vault_Load(object sender, EventArgs e)
         {
-           
+           //Clearing the Rows and upgarde new Data !
             passwordGrid.Rows.Clear();
+            //Diplay the currently logged in person !
             usernameForVault.Text = $"{Form1.username}'s Password Vault";
             
             ArrayList nicknames = database.getUserInfoNickName(Form1.username);
@@ -52,12 +51,13 @@ namespace SafePass
             ArrayList passwords = database.getUserInfoPasswords(Form1.username);
             for (int i=0;i<nicknames.Count;i++)
             {
+                //A new is created for every new password credential !
                  dataGridViewRow = new DataGridViewRow();
                 dataGridViewRow.CreateCells(passwordGrid);
                 dataGridViewRow.Cells[0].Value = nicknames[i];
                 dataGridViewRow.Cells[1].Value = emails_username[i];
                 dataGridViewRow.Cells[2].Value = new DataEncryptPassword().decryptData(passwords[i].ToString());
-                
+                //buttons and Label for Delete,Update and Copy !
                 dataGridViewRow.Cells[3].Value = "Delete";
                 dataGridViewRow.Cells[4].Value = "Copy";
                 dataGridViewRow.Cells[5].Value = "Update";
@@ -106,23 +106,7 @@ namespace SafePass
         
         private void searchNickName_TextChanged(object sender, EventArgs e)
         {
-            String sql = "SELECT nickname,email_username,password from user_passwords where username='"+Form1.username+"' and nickname LIKE %'"+searchNickName.Text+"'%";
-            mySqlCommand = new MySqlCommand(sql,database.GetMySqlConnection());
-            String nickname=null, email_user=null, pass=null;
-            using (var usernameReader = mySqlCommand.ExecuteReader())
-            {
-                while (usernameReader.Read())
-                {
-                    nickname = usernameReader.GetString(0);
-                     email_user = usernameReader.GetString(1);
-                    pass = usernameReader.GetString(2);
-                }
-            }
-            
-            dataGridViewRow.Cells[0].Value = nickname.ToString();
-            dataGridViewRow.Cells[1].Value = email_user.ToString();
-            dataGridViewRow.Cells[2].Value = pass.ToString();
-            passwordGrid.Rows.Add(dataGridViewRow);
+           
         }
         //Function to show the passwords as *
         private void passwordGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
