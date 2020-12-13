@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -101,14 +102,27 @@ namespace SafePass
                 }
                 else
                 {
-                    String passwordEncrypted = new DataEncryptPassword(passSignUp.Text).encryptData();
-                    if (database.addUserToDatabase(userSignUp.Text,emailSignUp.Text,passwordEncrypted,DateTime.Now.ToString()))
+                   
+                    Regex regex = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+                    //Testing If the Password Meets the Strength Parameters !
+                    if (regex.IsMatch(passSignUp.Text))
                     {
-                        MessageBox.Show("User Added to Database Now Login !");
+                        String passwordEncrypted = new DataEncryptPassword(passSignUp.Text).encryptData();
+                        if (database.addUserToDatabase(userSignUp.Text, emailSignUp.Text, passwordEncrypted, DateTime.Now.ToString()))
+                        {
+                            MessageBox.Show("User Added to Database,Now Login !");
+                            this.Hide();
+                            Form1 login = new Form1();
+                            login.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Some Thing Went Wring ! !");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Some Thing Went Wring ! !");
+                        passSignWarn.Text = "Master Password Should Be Stronger !";
                     }
                 }
             }

@@ -133,17 +133,15 @@ namespace SafePass
         //Code to add the User Data(Website Pasword to the Database ! the Table name is user_passwords)
         public Boolean addUserPasswordToDatabase(String username,String nickname, String email_username, String password, String timeStamp)
         {
-            bool flag = false;
+           
             String sql_for_insert = "INSERT INTO user_passwords(username,nickname,email_username,password,time_stamp) VALUES ('" + username + "','"+nickname+"' , '" + email_username + "', '" + password + "', '" + timeStamp + "')";
             using (MySqlCommand mySqlCommand = new MySqlCommand(sql_for_insert, mySqlConnection))
             {
-                if (mySqlCommand.ExecuteNonQuery() == 1)
-                {
-                    return true;
-                }
+                return mySqlCommand.ExecuteNonQuery() == 1;
             }
-            return flag;
+           
         }
+        //Arraylist of Nickname which they can give to a website for easy remembering !
         public System.Collections.ArrayList getUserInfoNickName(String username)
         {
             System.Collections.ArrayList arrayListForNickName = new System.Collections.ArrayList();
@@ -160,6 +158,7 @@ namespace SafePass
             }
             return arrayListForNickName;
         }
+        //Arraylist of logged in user's Email/Username by which they can log in to an account !
         public System.Collections.ArrayList getUserInfoEmailUsername(String username)
         {
             System.Collections.ArrayList arrayListEmailUsername = new System.Collections.ArrayList();
@@ -176,6 +175,7 @@ namespace SafePass
             }
             return arrayListEmailUsername;
         }
+        //Arraylist of logged in user's passwords 
         public System.Collections.ArrayList getUserInfoPasswords(String username)
         {
             System.Collections.ArrayList arrayListForPassword = new System.Collections.ArrayList();
@@ -216,6 +216,7 @@ namespace SafePass
             }
             
         }
+       //Below method is used to get User Password Infomation(Logged in User !)
         public String[] getUserPasswordInformation(String username,String nickname)
         {
             String[] str = new string[5];
@@ -235,5 +236,7 @@ namespace SafePass
             }
             return str;
         }
+        //When the Text box text is changed in the Search box, this fucntion is invoked !
+        
     }
 }

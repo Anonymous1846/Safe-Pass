@@ -12,6 +12,9 @@ namespace SafePass
 {
     public partial class UpdateUserPass : Form
     {
+        private bool isMouseDown;
+        private Point offset;
+       
         Database database;
         public UpdateUserPass()
         {
@@ -72,6 +75,29 @@ namespace SafePass
             {
                 passUpdate.PasswordChar = '*';
             }
+        }
+        //Drag the Form on Mouse Events !
+        private void UpdateUserPass_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDown = false;
+        }
+
+        private void UpdateUserPass_MouseMove(object sender, MouseEventArgs e)
+        {
+            //For Moving the Form, as The Form is Borderless we have to change the positin explicitly!
+            if (isMouseDown)
+            {
+                Point current_point = PointToScreen(e.Location);
+                Location = new Point(current_point.X - offset.X, current_point.Y - offset.Y);
+            }
+        }
+
+        private void UpdateUserPass_MouseDown(object sender, MouseEventArgs e)
+        {
+            //Current Position when mouse is Down
+            offset.X = e.X;
+            offset.Y = e.Y;
+            isMouseDown = true;
         }
     }
 }

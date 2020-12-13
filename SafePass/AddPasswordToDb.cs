@@ -12,6 +12,8 @@ namespace SafePass
 {
     public partial class AddPasswordToDb : Form
     {
+        private bool isMouseDown;
+        private Point offset;
         public AddPasswordToDb()
         {
             InitializeComponent();
@@ -64,6 +66,40 @@ namespace SafePass
                 userPasswordAdding.PasswordChar = '*';
                
             }
+        }
+
+        private void AddPasswordToDb_MouseDown(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            isMouseDown = true;
+        }
+
+        private void AddPasswordToDb_MouseMove(object sender, MouseEventArgs e)
+        {
+            //For Moving the Form, as The Form is Borderless we have to change the positin explicitly!
+            if (isMouseDown)
+            {
+                Point current_point = PointToScreen(e.Location);
+                Location = new Point(current_point.X - offset.X, current_point.Y - offset.Y);
+            }
+        }
+
+        private void AddPasswordToDb_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDown = false;
+        }
+
+        private void addBtnAdding_MouseEnter(object sender, EventArgs e)
+        {
+            addBtnAdding.ForeColor = Color.Black;
+            addBtnAdding.BackColor = Color.White;
+        }
+
+        private void addBtnAdding_MouseLeave(object sender, EventArgs e)
+        {
+            addBtnAdding.ForeColor = Color.White;
+            addBtnAdding.BackColor = Color.Black;
         }
     }
 }

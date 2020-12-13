@@ -104,10 +104,7 @@ namespace SafePass
             }
         }
         
-        private void searchNickName_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
+       
         //Function to show the passwords as *
         private void passwordGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -117,7 +114,18 @@ namespace SafePass
             }
                     
         }
-        
 
+        private void addPassword_MouseEnter(object sender, EventArgs e)
+        {
+            addPassword.ForeColor = Color.Black;
+            addPassword.BackColor = Color.White;
+        }
+
+        private void addPassword_MouseLeave(object sender, EventArgs e)
+        {
+            addPassword.ForeColor = Color.White;
+            addPassword.BackColor = Color.Black;
+        }
+       
     }
 }

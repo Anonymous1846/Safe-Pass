@@ -182,6 +182,9 @@
             this.Name = "UpdateUserPass";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.UpdateUserPass_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UpdateUserPass_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateUserPass_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.UpdateUserPass_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 

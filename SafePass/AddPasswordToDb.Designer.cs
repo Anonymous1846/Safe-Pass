@@ -103,6 +103,8 @@
             this.addBtnAdding.Text = "Add";
             this.addBtnAdding.UseVisualStyleBackColor = true;
             this.addBtnAdding.Click += new System.EventHandler(this.addBtnAdding_Click);
+            this.addBtnAdding.MouseEnter += new System.EventHandler(this.addBtnAdding_MouseEnter);
+            this.addBtnAdding.MouseLeave += new System.EventHandler(this.addBtnAdding_MouseLeave);
             // 
             // usernameAdding
             // 
@@ -199,6 +201,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddPasswordToDb";
             this.Text = "Form3";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AddPasswordToDb_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AddPasswordToDb_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.AddPasswordToDb_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -29,17 +29,15 @@
         private void InitializeComponent()
         {
             this.usernameForVault = new System.Windows.Forms.Label();
-            this.searchNickName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.passwordGrid = new System.Windows.Forms.DataGridView();
-            this.addPassword = new System.Windows.Forms.Button();
             this.nickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deletePass = new System.Windows.Forms.DataGridViewLinkColumn();
             this.copy = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Update = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.addPassword = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passwordGrid)).BeginInit();
             this.SuspendLayout();
@@ -54,25 +52,6 @@
             this.usernameForVault.Size = new System.Drawing.Size(205, 26);
             this.usernameForVault.TabIndex = 0;
             this.usernameForVault.Text = "User Password Vault";
-            // 
-            // searchNickName
-            // 
-            this.searchNickName.Location = new System.Drawing.Point(214, 92);
-            this.searchNickName.Name = "searchNickName";
-            this.searchNickName.Size = new System.Drawing.Size(245, 22);
-            this.searchNickName.TabIndex = 1;
-            this.searchNickName.TextChanged += new System.EventHandler(this.searchNickName_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(52, 96);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Enter Nickname :";
             // 
             // panel1
             // 
@@ -100,19 +79,6 @@
             this.passwordGrid.TabIndex = 0;
             this.passwordGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.passwordGrid_CellClick);
             this.passwordGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.passwordGrid_CellFormatting);
-            // 
-            // addPassword
-            // 
-            this.addPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addPassword.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPassword.ForeColor = System.Drawing.Color.White;
-            this.addPassword.Location = new System.Drawing.Point(214, 133);
-            this.addPassword.Name = "addPassword";
-            this.addPassword.Size = new System.Drawing.Size(86, 26);
-            this.addPassword.TabIndex = 4;
-            this.addPassword.Text = "Add";
-            this.addPassword.UseVisualStyleBackColor = true;
-            this.addPassword.Click += new System.EventHandler(this.addPassword_Click);
             // 
             // nickname
             // 
@@ -156,6 +122,21 @@
             this.Update.Name = "Update";
             this.Update.Width = 125;
             // 
+            // addPassword
+            // 
+            this.addPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addPassword.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addPassword.ForeColor = System.Drawing.Color.White;
+            this.addPassword.Location = new System.Drawing.Point(52, 85);
+            this.addPassword.Name = "addPassword";
+            this.addPassword.Size = new System.Drawing.Size(86, 29);
+            this.addPassword.TabIndex = 4;
+            this.addPassword.Text = "Add";
+            this.addPassword.UseVisualStyleBackColor = true;
+            this.addPassword.Click += new System.EventHandler(this.addPassword_Click);
+            this.addPassword.MouseEnter += new System.EventHandler(this.addPassword_MouseEnter);
+            this.addPassword.MouseLeave += new System.EventHandler(this.addPassword_MouseLeave);
+            // 
             // Vault
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -163,8 +144,6 @@
             this.BackColor = System.Drawing.Color.Black;
             this.Controls.Add(this.addPassword);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.searchNickName);
             this.Controls.Add(this.usernameForVault);
             this.Name = "Vault";
             this.Size = new System.Drawing.Size(730, 555);
@@ -179,8 +158,6 @@
         #endregion
 
         private System.Windows.Forms.Label usernameForVault;
-        private System.Windows.Forms.TextBox searchNickName;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView passwordGrid;
         private System.Windows.Forms.Button addPassword;
