@@ -26,9 +26,11 @@ namespace SafePass
 
         private void updateBtnuser_Click(object sender, EventArgs e)
         {
-            if (database.updateUserPassword(Form1.username,Vault.NickName,emailUpdate.Text,passUpdate.Text,DateTime.Now.ToString()))
+            if (database.updateUserPassword(Form1.username,Vault.NickName,emailUpdate.Text,new DataEncryptPassword(passUpdate.Text).encryptData(),DateTime.Now.ToString()))
             {
                 MessageBox.Show("User Credentials Updated !","Updation Successful !",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                //Calling the Vault Instance and Thereby Reloading The Contents of the Form to Show The Newly Updated Values !
+                Vault.VaultInstance.Vault_Load(sender, e);
                 this.Close();
             }
             else

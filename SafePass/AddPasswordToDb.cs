@@ -41,7 +41,8 @@ namespace SafePass
                 if (new Database().addUserPasswordToDatabase(Form1.username,nickName.Text,usernameAdding.Text,new DataEncryptPassword(userPasswordAdding.Text).encryptData(),DateTime.Now.ToString()))
                 {
                     MessageBox.Show("Password Saved Successfully !","Saved Successfully !",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    
+                    //Calling the Vault Instance and Thereby Reloading The Contents of the Form to Show The Newly Added Values !
+                    Vault.VaultInstance.Vault_Load(sender,e);
                     this.Close();
                 }
                 else

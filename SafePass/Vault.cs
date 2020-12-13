@@ -41,12 +41,12 @@ namespace SafePass
            
         }
         //Shows the usernam as soon as the Form Loads/user Control Loads !
-        private void Vault_Load(object sender, EventArgs e)
+        public void Vault_Load(object sender, EventArgs e)
         {
            
             passwordGrid.Rows.Clear();
             usernameForVault.Text = $"{Form1.username}'s Password Vault";
-            DataEncryptPassword data = new DataEncryptPassword();
+            
             ArrayList nicknames = database.getUserInfoNickName(Form1.username);
             ArrayList emails_username = database.getUserInfoEmailUsername(Form1.username);
             ArrayList passwords = database.getUserInfoPasswords(Form1.username);
@@ -56,7 +56,7 @@ namespace SafePass
                 dataGridViewRow.CreateCells(passwordGrid);
                 dataGridViewRow.Cells[0].Value = nicknames[i];
                 dataGridViewRow.Cells[1].Value = emails_username[i];
-                dataGridViewRow.Cells[2].Value = data.decryptData(passwords[i].ToString());
+                dataGridViewRow.Cells[2].Value = new DataEncryptPassword().decryptData(passwords[i].ToString());
                 
                 dataGridViewRow.Cells[3].Value = "Delete";
                 dataGridViewRow.Cells[4].Value = "Copy";
@@ -106,7 +106,7 @@ namespace SafePass
         
         private void searchNickName_TextChanged(object sender, EventArgs e)
         {
-            String sql = "SELECT nickname,email_username,password from user_passwords where username='"+Form1.username+"' and nickname='"+searchNickName.Text+"'";
+            String sql = "SELECT nickname,email_username,password from user_passwords where username='"+Form1.username+"' and nickname LIKE %'"+searchNickName.Text+"'%";
             mySqlCommand = new MySqlCommand(sql,database.GetMySqlConnection());
             String nickname=null, email_user=null, pass=null;
             using (var usernameReader = mySqlCommand.ExecuteReader())
@@ -118,7 +118,7 @@ namespace SafePass
                     pass = usernameReader.GetString(2);
                 }
             }
-           
+            
             dataGridViewRow.Cells[0].Value = nickname.ToString();
             dataGridViewRow.Cells[1].Value = email_user.ToString();
             dataGridViewRow.Cells[2].Value = pass.ToString();

@@ -209,7 +209,7 @@ namespace SafePass
         public Boolean updateUserPassword(String username, String nickname,String email_username,String password,String time_stamp)
         {
            
-            String sql_for_update = "UPDATE user_passwords SET nickname='"+nickname+ "' , email_username='"+email_username+"', password='"+password+"' , time_stamp='"+time_stamp+"'";
+            String sql_for_update = "UPDATE user_passwords SET nickname='"+nickname+ "' , email_username='"+email_username+"', password='"+password+"' , time_stamp='"+time_stamp+"' where username='"+username+"' and nickname='"+nickname+"'";
             using (MySqlCommand mySqlCommand = new MySqlCommand(sql_for_update, mySqlConnection))
             {
                 return mySqlCommand.ExecuteNonQuery() == 1;
