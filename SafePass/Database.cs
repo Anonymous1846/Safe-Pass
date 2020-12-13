@@ -29,6 +29,12 @@ namespace SafePass
             
            
         }
+        //Function that returns a Connection
+        public MySqlConnection GetMySqlConnection()
+        {
+            mySqlConnection = new MySqlConnection("datasource=localhost;port=3306;database=safepass;username=root;password=MySql@2546");
+            return mySqlConnection;
+        }
         //Method to Delete Teh user From the Data base !
         public Boolean deleteuser(string username)
         {

@@ -51,5 +51,18 @@ namespace SafePass
                 }
             }
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            if (userPasswordAdding.PasswordChar.Equals('*'))
+            {
+                userPasswordAdding.PasswordChar = '\0';
+            }
+            else
+            {
+                userPasswordAdding.PasswordChar = '*';
+               
+            }
+        }
     }
 }

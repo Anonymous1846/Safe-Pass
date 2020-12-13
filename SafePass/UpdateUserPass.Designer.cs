@@ -39,6 +39,7 @@
             this.emailUpdate = new System.Windows.Forms.TextBox();
             this.passUpdate = new System.Windows.Forms.TextBox();
             this.lastUpdationPassword = new System.Windows.Forms.Label();
+            this.togglePass = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // closeBtnForUpdate
@@ -132,6 +133,7 @@
             // 
             this.passUpdate.Location = new System.Drawing.Point(210, 182);
             this.passUpdate.Name = "passUpdate";
+            this.passUpdate.PasswordChar = '*';
             this.passUpdate.Size = new System.Drawing.Size(428, 22);
             this.passUpdate.TabIndex = 8;
             // 
@@ -146,12 +148,25 @@
             this.lastUpdationPassword.TabIndex = 9;
             this.lastUpdationPassword.Text = "Last ";
             // 
+            // togglePass
+            // 
+            this.togglePass.AutoSize = true;
+            this.togglePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.togglePass.ForeColor = System.Drawing.Color.Aqua;
+            this.togglePass.Location = new System.Drawing.Point(666, 186);
+            this.togglePass.Name = "togglePass";
+            this.togglePass.Size = new System.Drawing.Size(58, 17);
+            this.togglePass.TabIndex = 10;
+            this.togglePass.Text = "Toggle";
+            this.togglePass.Click += new System.EventHandler(this.togglePass_Click);
+            // 
             // UpdateUserPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.togglePass);
             this.Controls.Add(this.lastUpdationPassword);
             this.Controls.Add(this.passUpdate);
             this.Controls.Add(this.emailUpdate);
@@ -184,5 +199,6 @@
         private System.Windows.Forms.TextBox emailUpdate;
         private System.Windows.Forms.TextBox passUpdate;
         private System.Windows.Forms.Label lastUpdationPassword;
+        private System.Windows.Forms.Label togglePass;
     }
 }

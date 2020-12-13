@@ -41,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.nickName = new System.Windows.Forms.TextBox();
             this.nickNameError = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -114,6 +115,7 @@
             // 
             this.userPasswordAdding.Location = new System.Drawing.Point(194, 138);
             this.userPasswordAdding.Name = "userPasswordAdding";
+            this.userPasswordAdding.PasswordChar = '*';
             this.userPasswordAdding.Size = new System.Drawing.Size(380, 22);
             this.userPasswordAdding.TabIndex = 6;
             // 
@@ -162,12 +164,25 @@
             this.nickNameError.Size = new System.Drawing.Size(0, 17);
             this.nickNameError.TabIndex = 11;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label5.Location = new System.Drawing.Point(617, 143);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 17);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Toggle";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
             // AddPasswordToDb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.nickNameError);
             this.Controls.Add(this.nickName);
             this.Controls.Add(this.label4);
@@ -203,5 +218,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox nickName;
         private System.Windows.Forms.Label nickNameError;
+        private System.Windows.Forms.Label label5;
     }
 }

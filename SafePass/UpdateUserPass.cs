@@ -59,5 +59,17 @@ namespace SafePass
             passUpdate.Text = new DataEncryptPassword().decryptData(database.getUserPasswordInformation(Form1.username, Vault.NickName)[3]);
             lastUpdationPassword.Text = $"Last Updation :{database.getUserPasswordInformation(Form1.username, Vault.NickName)[4]}";
         }
+
+        private void togglePass_Click(object sender, EventArgs e)
+        {
+            if (passUpdate.PasswordChar.Equals('*'))
+            {
+                passUpdate.PasswordChar = '\0';
+            }
+            else
+            {
+                passUpdate.PasswordChar = '*';
+            }
+        }
     }
 }
