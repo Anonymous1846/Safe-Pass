@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>safepass.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
       <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.Licensing.dll</HintPath>
@@ -255,6 +258,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="safepass.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
