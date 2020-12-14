@@ -214,6 +214,9 @@
             this.Name = "EdituserProfile";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.EdituserProfile_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EdituserProfile_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.EdituserProfile_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.EdituserProfile_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 

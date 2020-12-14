@@ -13,6 +13,8 @@ namespace SafePass
     public partial class EdituserProfile : Form
     {
         Database database;
+        bool isMouseDown;
+        private Point offset;
         public EdituserProfile()
         {
             InitializeComponent();
@@ -162,6 +164,30 @@ namespace SafePass
         {
             upBtn.ForeColor = Color.White;
             upBtn.BackColor = Color.Black;
+        }
+
+        private void EdituserProfile_MouseDown(object sender, MouseEventArgs e)
+        {
+            //Current Position when mouse is Down
+            offset.X = e.X;
+            offset.Y = e.Y;
+            isMouseDown = true;
+        }
+
+        private void EdituserProfile_MouseMove(object sender, MouseEventArgs e)
+        {
+            //Updating the Position of the Window as the Form Mouse Event is invoked !
+            //For Moving the Form, as The Form is Borderless we have to change the positin explicitly!
+            if (isMouseDown)
+            {
+                Point current_point = PointToScreen(e.Location);
+                Location = new Point(current_point.X - offset.X, current_point.Y - offset.Y);
+            }
+        }
+
+        private void EdituserProfile_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDown = false;
         }
         //End of Color Changing Events for Update and Delete Buttons !
     }
