@@ -142,5 +142,10 @@ namespace SafePass
                 Profile.ProfileInstance.BringToFront();
             }
         }
+
+        private void min_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

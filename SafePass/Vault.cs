@@ -129,34 +129,60 @@ namespace SafePass
         //The Function to find the Nickname !
         private void searchNickname_TextChanged(object sender, EventArgs e)
         {
+            
+          
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             //This Mode enables a full row of the Datagrid View to be selected !
+            passwordGrid.ClearSelection();
             passwordGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            String text = searchNickname.Text;
+            int rowIndex = -1;
+           
             try
 
             {
+               
                 //Iterating through the Rows of the Datagrid View
                 foreach (DataGridViewRow row in passwordGrid.Rows)
                 {
-                    //Check if the First Column i.e the Nickname is equal to the Entered Text !
-                    if (row.Cells[0].Value.ToString().Equals(searchNickname.Text))
+
+                    if (row.Cells[0].Value.ToString().Equals(text))
                     {
-                        //If yes then seleted will be true !
-                        row.Selected = true;
+                        rowIndex = row.Index;
+
                         break;
-                    }
-                    else
-                    {
-                        //Else no Selecttion !
-                        row.Selected = false;
-                        break;
-                    }
+                    }                    
+                   
+                }
+                if (rowIndex!=-1)
+                {
+                    passwordGrid.Rows[rowIndex].Selected = true;
                 }
             }
             catch (Exception exc)
             {
-                MessageBox.Show(exc.Message);
+                MessageBox.Show("No Password(s) Saved By That Nickname !","Error !",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            finally
+            {
+                //Reloads the Program without Terminating it !
+                this.Refresh();
             }
         }
 
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.White;
+            button1.BackColor = Color.Black;
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.Black;
+            button1.BackColor = Color.White;
+        }
     }
 }

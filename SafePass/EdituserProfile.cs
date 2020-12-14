@@ -22,14 +22,17 @@ namespace SafePass
 
         private void closeEdit_Click(object sender, EventArgs e)
         {
+            //Closes the Current Window !
             this.Close();
         }
         //When the Del Button is clicked the User is deleted from the Database and is prompted to Login 
         private void delBtn_Click(object sender, EventArgs e)
         {
+            database.deleteUserCredentials(Form1.username);
             //Deleting The Logged in User !
             if (database.deleteuser(Form1.username))
             {
+                
                 MessageBox.Show($"{Form1.username} Deleted Successfully !","Deletion Successful",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 //Hides the Window
                 this.Hide();

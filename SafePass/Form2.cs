@@ -102,7 +102,7 @@ namespace SafePass
                 }
                 else
                 {
-                   
+                   //Regex for Password is Upper Letters, Lower case, Symbols(Atleast One !) and Numbers !
                     Regex regex = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
                     //Testing If the Password Meets the Strength Parameters !
                     if (regex.IsMatch(passSignUp.Text))
@@ -110,14 +110,14 @@ namespace SafePass
                         String passwordEncrypted = new DataEncryptPassword(passSignUp.Text).encryptData();
                         if (database.addUserToDatabase(userSignUp.Text, emailSignUp.Text, passwordEncrypted, DateTime.Now.ToString()))
                         {
-                            MessageBox.Show("User Added to Database,Now Login !");
+                            MessageBox.Show("User Registration Complete !","Please Login !",MessageBoxButtons.OK,MessageBoxIcon.Information);
                             this.Hide();
                             Form1 login = new Form1();
                             login.ShowDialog();
                         }
                         else
                         {
-                            MessageBox.Show("Some Thing Went Wring ! !");
+                            MessageBox.Show("Unexpected Error !","Error !",MessageBoxButtons.OK,MessageBoxIcon.Error);
                         }
                     }
                     else

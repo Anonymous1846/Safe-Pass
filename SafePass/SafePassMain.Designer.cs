@@ -37,6 +37,7 @@
             this.vaultBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.main_panel = new System.Windows.Forms.Panel();
+            this.min = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -44,6 +45,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.min);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.closeButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -149,6 +151,20 @@
             this.main_panel.Size = new System.Drawing.Size(730, 555);
             this.main_panel.TabIndex = 2;
             // 
+            // min
+            // 
+            this.min.FlatAppearance.BorderSize = 0;
+            this.min.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.min.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.min.ForeColor = System.Drawing.Color.White;
+            this.min.Location = new System.Drawing.Point(808, 0);
+            this.min.Name = "min";
+            this.min.Size = new System.Drawing.Size(60, 47);
+            this.min.TabIndex = 2;
+            this.min.Text = "-";
+            this.min.UseVisualStyleBackColor = true;
+            this.min.Click += new System.EventHandler(this.min_Click);
+            // 
             // SafePassMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -180,5 +196,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button passGen;
+        private System.Windows.Forms.Button min;
     }
 }

@@ -201,6 +201,19 @@ namespace SafePass
             }
             return flag;
         }
+        //Delete all The User Credentials when the Username is deleted
+        public void deleteUserCredentials(String username)
+        {
+            
+            String sql_for_delete_password = "DELETE FROM user_passwords WHERE username='" + username + "'";
+            using (MySqlCommand mySqlCommand = new MySqlCommand(sql_for_delete_password, mySqlConnection))
+            {
+               
+                  int x= mySqlCommand.ExecuteNonQuery();
+                Console.WriteLine($"The {x} Rows Affected !");
+            }
+            
+        }
         public Boolean updateUserPassword(String username, String nickname,String email_username,String password,String time_stamp)
         {
            
