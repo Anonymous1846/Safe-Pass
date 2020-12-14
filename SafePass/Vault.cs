@@ -126,6 +126,37 @@ namespace SafePass
             addPassword.ForeColor = Color.White;
             addPassword.BackColor = Color.Black;
         }
-       
+        //The Function to find the Nickname !
+        private void searchNickname_TextChanged(object sender, EventArgs e)
+        {
+            //This Mode enables a full row of the Datagrid View to be selected !
+            passwordGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+
+            {
+                //Iterating through the Rows of the Datagrid View
+                foreach (DataGridViewRow row in passwordGrid.Rows)
+                {
+                    //Check if the First Column i.e the Nickname is equal to the Entered Text !
+                    if (row.Cells[0].Value.ToString().Equals(searchNickname.Text))
+                    {
+                        //If yes then seleted will be true !
+                        row.Selected = true;
+                        break;
+                    }
+                    else
+                    {
+                        //Else no Selecttion !
+                        row.Selected = false;
+                        break;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+
     }
 }

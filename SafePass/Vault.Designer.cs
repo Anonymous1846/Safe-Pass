@@ -38,6 +38,8 @@
             this.copy = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Update = new System.Windows.Forms.DataGridViewLinkColumn();
             this.addPassword = new System.Windows.Forms.Button();
+            this.searchNickname = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passwordGrid)).BeginInit();
             this.SuspendLayout();
@@ -137,11 +139,32 @@
             this.addPassword.MouseEnter += new System.EventHandler(this.addPassword_MouseEnter);
             this.addPassword.MouseLeave += new System.EventHandler(this.addPassword_MouseLeave);
             // 
+            // searchNickname
+            // 
+            this.searchNickname.Location = new System.Drawing.Point(394, 91);
+            this.searchNickname.Name = "searchNickname";
+            this.searchNickname.Size = new System.Drawing.Size(316, 22);
+            this.searchNickname.TabIndex = 5;
+            this.searchNickname.TextChanged += new System.EventHandler(this.searchNickname_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(195, 95);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(184, 18);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Enter Nickname to Search:";
+            // 
             // Vault
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.searchNickname);
             this.Controls.Add(this.addPassword);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.usernameForVault);
@@ -167,5 +190,7 @@
         private System.Windows.Forms.DataGridViewLinkColumn deletePass;
         private System.Windows.Forms.DataGridViewButtonColumn copy;
         private System.Windows.Forms.DataGridViewLinkColumn Update;
+        private System.Windows.Forms.TextBox searchNickname;
+        private System.Windows.Forms.Label label1;
     }
 }
