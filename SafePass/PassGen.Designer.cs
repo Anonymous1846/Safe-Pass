@@ -148,7 +148,7 @@
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
+          
         }
 
         #endregion
@@ -162,5 +162,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel toggle_visibility;
         private System.Windows.Forms.Label label3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
     }
 }

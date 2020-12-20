@@ -95,3 +95,5 @@ C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.Profile.r
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.EdituserProfile.resources
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.AddPasswordToDb.resources
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Debug\SafePass.UpdateUserPass.resources
+C:\Users\USER\Documents\Workspace\SafePass\SafePass\bin\Debug\Newtonsoft.Json.dll
+C:\Users\USER\Documents\Workspace\SafePass\SafePass\bin\Debug\Newtonsoft.Json.xml

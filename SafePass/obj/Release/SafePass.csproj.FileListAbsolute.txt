@@ -95,3 +95,5 @@ C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Release\SafePass.csproj.
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Release\SafePass.csproj.CopyComplete
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Release\SafePass.exe
 C:\Users\USER\Documents\Workspace\SafePass\SafePass\obj\Release\SafePass.pdb
+C:\Users\USER\Documents\Workspace\SafePass\SafePass\bin\Release\Newtonsoft.Json.dll
+C:\Users\USER\Documents\Workspace\SafePass\SafePass\bin\Release\Newtonsoft.Json.xml

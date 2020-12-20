@@ -4,18 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using MySql.Data;
+using Newtonsoft.Json;
+//Used for Connecting to MySql Client/Database !
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace SafePass
 {
     class Database
     {
         MySqlConnection mySqlConnection;
+        private String username;
+        private String password;
+        private String datasource;
+        private String database;
+        private String port;
+        private readonly String the_json_path = "C:\\Users\\USER\\Documents\\Temps\\database.json";
         public Database()
         {
+            //Execute The Function to Get The Database Credentials and Connect to the Database !
+            getTheDatabaseDataCreadentials();
             try
             {
-                mySqlConnection = new MySqlConnection("datasource=localhost;port=3306;database=safepass;username=root;password=MySql@2546");
+                mySqlConnection = new MySqlConnection($"datasource={datasource};port={port};database={database};username={username};password={password}");
+                //Entering the Database Credetials and Opening The Connection !
                 mySqlConnection.Open();
                 if (mySqlConnection.State==System.Data.ConnectionState.Open)
                 {
@@ -24,12 +36,24 @@ namespace SafePass
             }
             catch (Exception e)
             {
-                Console.WriteLine("An Error Occured While Connecting To DB");
+                Console.WriteLine($"An Error Occured While Connecting To DB\n{e.Message.ToString()}");
             }
             
            
         }
-
+        private void getTheDatabaseDataCreadentials()
+        {
+            //Reading The Required Information from the JSON File !
+            //In the Current Context Dynamic keyword is Used to delay the Type Checking until Runtime !
+            //Deserializing the The JSON Data !
+            dynamic the_json_data = JsonConvert.DeserializeObject(File.ReadAllText(the_json_path));
+            username = the_json_data["username"];
+            password = the_json_data["password"];
+            datasource = the_json_data["datasource"];
+            database = the_json_data["database"];
+            port = the_json_data["port"];
+            //The JSON File will Be Parsed and The Required infomation will be obtained from the Keys !
+        }
         //Method to Delete The user From the Data base !
         public Boolean deleteuser(string username)
         {
