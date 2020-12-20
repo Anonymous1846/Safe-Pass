@@ -31,12 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.generatedPasswordTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.toggle_visibility = new System.Windows.Forms.LinkLabel();
             this.currentStrength = new System.Windows.Forms.Label();
             this.passwordStrengthMeter = new System.Windows.Forms.HScrollBar();
             this.copyToClipBoard = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,7 @@
             // 
             this.generatedPasswordTextBox.Location = new System.Drawing.Point(72, 63);
             this.generatedPasswordTextBox.Name = "generatedPasswordTextBox";
+            this.generatedPasswordTextBox.PasswordChar = '*';
             this.generatedPasswordTextBox.Size = new System.Drawing.Size(376, 24);
             this.generatedPasswordTextBox.TabIndex = 2;
             // 
@@ -74,6 +75,16 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Your Password is Ready";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(66, 341);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(222, 19);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Minimum Password Length : 8";
             // 
             // toggle_visibility
             // 
@@ -124,16 +135,6 @@
             this.label2.Text = "Using the password generator is simple, just drag to increase the password streng" +
     "th and it will give you a strong password.\r\n";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(66, 341);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(222, 19);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Minimum Password Length : 8";
-            // 
             // PassGen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -148,7 +149,7 @@
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-          
+
         }
 
         #endregion
