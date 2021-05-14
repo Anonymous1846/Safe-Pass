@@ -14,9 +14,11 @@ namespace SafePass
     {
         private bool isMouseDown;
         private Point offset;
+        private Database db;
         public AddPasswordToDb()
         {
             InitializeComponent();
+            db = new Database();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,17 +42,24 @@ namespace SafePass
             }
             if (!nickName.Text.Equals(String.Empty)&&!usernameAdding.Text.Equals(String.Empty) && !userPasswordAdding.Text.Equals(String.Empty))
             {
-                if (new Database().addUserPasswordToDatabase(Form1.username,nickName.Text,usernameAdding.Text,new CryptoConfig(userPasswordAdding.Text).encryptData(),DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")))
+                if (db.checkNickName(nickName.Text))
                 {
-                    MessageBox.Show("Password Saved Successfully !","Saved Successfully !",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    //Calling the Vault Instance and Thereby Reloading The Contents of the Form to Show The Newly Added Values !
-                    Vault.VaultInstance.Vault_Load(sender,e);
-                    this.Close();
+                    if (db.addUserPasswordToDatabase(Form1.username, nickName.Text, usernameAdding.Text, new CryptoConfig(userPasswordAdding.Text).encryptData(), DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")))
+                    {
+                        MessageBox.Show("Password Saved Successfully !", "Saved Successfully !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //Calling the Vault Instance and Thereby Reloading The Contents of the Form to Show The Newly Added Values !
+                        Vault.VaultInstance.Vault_Load(sender, e);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something Went Wrong  !", "Error !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Something Went Wrong  !", "Error !", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    MessageBox.Show("Nickname Already Exists !!", "Error !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

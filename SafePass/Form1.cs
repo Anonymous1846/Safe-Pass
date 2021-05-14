@@ -57,6 +57,11 @@ namespace SafePass
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
+            login();
+        }
+
+        private void login()
+        {
             //If Either password or Username is Empty of Both are empty then, red Label will show, to fill the information !
             if (usernameTextBox.Text.Equals(String.Empty))
             {
@@ -64,20 +69,21 @@ namespace SafePass
             }
             if (passwordTextBox.Text.Equals(String.Empty))
             {
-               passError.Text = "Password Not Entered";
+                passError.Text = "Password Not Entered";
             }
-            if (!usernameTextBox.Text.Equals(String.Empty)&&!passwordTextBox.Text.Equals(String.Empty))
+            if (!usernameTextBox.Text.Equals(String.Empty) && !passwordTextBox.Text.Equals(String.Empty))
             {
                 database = new Database();
                 if (database.checkForUser(usernameTextBox.Text))
                 {
-                    if (database.authForUser(usernameTextBox.Text,new CryptoConfig(passwordTextBox.Text).getHashedData()))
+                    if (database.authForUser(usernameTextBox.Text, new CryptoConfig(passwordTextBox.Text).getHashedData()))
                     {
                         username = usernameTextBox.Text;
                         SafePassMain safePassMain = new SafePassMain();
                         this.Hide();
                         safePassMain.ShowDialog();
                         this.Close();
+
                     }
                     else
                     {
@@ -88,13 +94,18 @@ namespace SafePass
                 {
                     usernameError.Text = "Username Doesn't Exixts !";
                 }
-                
+
             }
         }
+
         //When the password textbox is invoked the warning will go 
         private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             passError.Text = "";
+            if (e.KeyCode == Keys.Return)
+            {
+                login();
+            }
         }
         //When the username textbox is invoked the warning will go 
         private void usernameTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -133,6 +144,8 @@ namespace SafePass
             loginBtn.ForeColor = Color.Black;
             loginBtn.BackColor = Color.White;
         }
+
+        
 
         //End of Hover Color Change for The Login Button !
     }

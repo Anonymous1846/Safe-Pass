@@ -177,6 +177,22 @@ namespace SafePass
             }
             return arrayListForNickName;
         }
+        public Boolean checkNickName(String nickname)
+        {
+            Boolean flag = false;
+            String sql_select_user_info = "SELECT user_passwords.nickname from user_passwords INNER JOIN users ON users.username = user_passwords.username and users.username = '" + username + "' and user_passwords.nickname = '" + nickname + "'";
+            using (MySqlCommand mySqlCommandForReading = new MySqlCommand(sql_select_user_info, mySqlConnection))
+            {
+                using (var usernameReader = mySqlCommandForReading.ExecuteReader())
+                {
+                    if (usernameReader.Read())
+                    {
+                        flag = true;
+                    }
+                }
+            }
+            return flag;
+        }
         //Arraylist of logged in user's Email/Username by which they can log in to an account !
         public System.Collections.ArrayList getUserInfoEmailUsername(String username)
         {

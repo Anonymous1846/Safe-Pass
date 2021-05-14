@@ -29,7 +29,7 @@ namespace SafePass
 
         private void updateBtnuser_Click(object sender, EventArgs e)
         {
-            if (database.updateUserPassword(Form1.username,Vault.NickName,emailUpdate.Text,new CryptoConfig(passUpdate.Text).getHashedData(),DateTime.Now.ToString()))
+            if (database.updateUserPassword(Form1.username,Vault.NickName,emailUpdate.Text,new CryptoConfig(passUpdate.Text).encryptData(),DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")))
             {
                 MessageBox.Show("User Credentials Updated !","Updation Successful !",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 //Calling the Vault Instance and Thereby Reloading The Contents of the Form to Show The Newly Updated Values !
@@ -59,10 +59,10 @@ namespace SafePass
         {
             //Pre load the data in the user Control
             nicknameUpdate.Text = Vault.NickName;
-            emailUpdate.Text = database.getUserPasswordInformation(Form1.username,Vault.NickName)[2];
+            emailUpdate.Text = database.getUserPasswordInformation(Form1.username,Vault.NickName)[1];
             //We get the Encrypted Password from the data base, to show the Decrypted version We Use the Decrypt Method !
-            passUpdate.Text = new CryptoConfig(database.getUserPasswordInformation(Form1.username, Vault.NickName)[3]).getDecryptedData();
-            lastUpdationPassword.Text = $"Last Updation :{database.getUserPasswordInformation(Form1.username, Vault.NickName)[2]}";
+            passUpdate.Text = new CryptoConfig(database.getUserPasswordInformation(Form1.username, Vault.NickName)[2]).getDecryptedData();
+            lastUpdationPassword.Text = $"Last Updation :{database.getUserPasswordInformation(Form1.username, Vault.NickName)[3]}";
         }
 
         private void togglePass_Click(object sender, EventArgs e)
