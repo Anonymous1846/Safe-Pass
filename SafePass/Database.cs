@@ -252,7 +252,7 @@ namespace SafePass
         public String[] getUserPasswordInformation(String username,String nickname)
         {
             String[] str = new string[5];
-            using (MySqlCommand mySqlCommandForReading = new MySqlCommand("select * from user_passwords where username ='" + username + "' and nickname='"+nickname+"'", mySqlConnection))
+            using (MySqlCommand mySqlCommandForReading = new MySqlCommand("select nickname,email_username,password,time_stamp from user_passwords where username ='" + username + "' and nickname='"+nickname+"'", mySqlConnection))
             {
                 using (var usernameReader = mySqlCommandForReading.ExecuteReader())
                 {
@@ -262,7 +262,7 @@ namespace SafePass
                         str[1] = usernameReader.GetString(1);
                         str[2] = usernameReader.GetString(2);
                         str[3] = usernameReader.GetString(3);
-                        str[4] = usernameReader.GetString(4);
+                        
                     }
                 }
             }

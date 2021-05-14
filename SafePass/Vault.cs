@@ -56,7 +56,7 @@ namespace SafePass
                 dataGridViewRow.CreateCells(passwordGrid);
                 dataGridViewRow.Cells[0].Value = nicknames[i];
                 dataGridViewRow.Cells[1].Value = emails_username[i];
-                dataGridViewRow.Cells[2].Value = new DataEncryptPassword().decryptData(passwords[i].ToString());
+                dataGridViewRow.Cells[2].Value = new CryptoConfig(passwords[i].ToString()).getDecryptedData();
                 //buttons and Label for Delete,Update and Copy !
                 dataGridViewRow.Cells[3].Value = "Delete";
                 dataGridViewRow.Cells[4].Value = "Copy";

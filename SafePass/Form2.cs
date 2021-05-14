@@ -107,8 +107,8 @@ namespace SafePass
                     //Testing If the Password Meets the Strength Parameters !
                     if (regex.IsMatch(passSignUp.Text))
                     {
-                        String passwordEncrypted = new DataEncryptPassword(passSignUp.Text).encryptData();
-                        if (database.addUserToDatabase(userSignUp.Text, emailSignUp.Text, passwordEncrypted, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")))
+                        String hashedPassword = new CryptoConfig(passSignUp.Text).getHashedData();
+                        if (database.addUserToDatabase(userSignUp.Text, emailSignUp.Text, hashedPassword, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")))
                         {
                             MessageBox.Show("User Registration Complete !","Please Login !",MessageBoxButtons.OK,MessageBoxIcon.Information);
                             this.Hide();

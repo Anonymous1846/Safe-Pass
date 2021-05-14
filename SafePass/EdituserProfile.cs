@@ -58,7 +58,7 @@ namespace SafePass
             //The Update will only be initiated if the Passwords Match 
             if (passwordEditUpdate.Text.Equals(confirmPasswordEditUpdate.Text))
             {
-                if (database.updateUser(Form1.username,emailEditUpdate.Text,new DataEncryptPassword(passwordEditUpdate.Text).encryptData(),DateTime.Now.ToString()))
+                if (database.updateUser(Form1.username,emailEditUpdate.Text,new CryptoConfig(passwordEditUpdate.Text).getHashedData(),DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")))
             {
                
                     //Show the Message Box Dialog that the user credentials is Updated !
@@ -89,11 +89,11 @@ namespace SafePass
         //When the Profile Edit Dialog is Loaded The user information is Filled in the textboxes !
         private void EdituserProfile_Load(object sender, EventArgs e)
         {
-            String decryptedPassword=new DataEncryptPassword().decryptData(database.getUserInformation(Form1.username)[2]);
+            String decryptedPassword=new CryptoConfig(database.getUserInformation(Form1.username)[2]).getHashedData();
             userEditProfileLabel.Text = database.getUserInformation(Form1.username)[0];
             emailEditUpdate.Text = database.getUserInformation(Form1.username)[1];
-            confirmPasswordEditUpdate.Text = decryptedPassword;
-            passwordEditUpdate.Text = decryptedPassword;
+            confirmPasswordEditUpdate.Text = "Enter Password";
+            passwordEditUpdate.Text = "Enter Password";
         }
         //Show the Password !
         private void showPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

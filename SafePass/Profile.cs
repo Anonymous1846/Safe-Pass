@@ -54,13 +54,16 @@ namespace SafePass
         {
        //Opens the Profile Edit Option Without Closing The Current Application !
             EdituserProfile edituserProfile = new EdituserProfile();
+            
             edituserProfile.ShowDialog();
 
         }
-
+        //when the user clicks this btn, the parent form of the widget closes and login form is invoked !
         private void logBtn_Click(object sender, EventArgs e)
         {
-            System.Environment.Exit(0);
+            this.ParentForm.Hide();
+            Form1 login = new Form1();
+            login.ShowDialog();
         }
 
         private void logBtn_MouseLeave(object sender, EventArgs e)

@@ -40,7 +40,7 @@ namespace SafePass
             }
             if (!nickName.Text.Equals(String.Empty)&&!usernameAdding.Text.Equals(String.Empty) && !userPasswordAdding.Text.Equals(String.Empty))
             {
-                if (new Database().addUserPasswordToDatabase(Form1.username,nickName.Text,usernameAdding.Text,new DataEncryptPassword(userPasswordAdding.Text).encryptData(),DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")))
+                if (new Database().addUserPasswordToDatabase(Form1.username,nickName.Text,usernameAdding.Text,new CryptoConfig(userPasswordAdding.Text).encryptData(),DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")))
                 {
                     MessageBox.Show("Password Saved Successfully !","Saved Successfully !",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     //Calling the Vault Instance and Thereby Reloading The Contents of the Form to Show The Newly Added Values !
