@@ -58,6 +58,23 @@ namespace SafePass
 
         }
 
+        private void logBtn_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private void logBtn_MouseLeave(object sender, EventArgs e)
+        {
+            logBtn.ForeColor = Color.White;
+            logBtn.BackColor = Color.Black;
+        }
+
+        private void logBtn_MouseEnter(object sender, EventArgs e)
+        {
+            logBtn.ForeColor = Color.Black;
+            logBtn.BackColor = Color.White;
+        }
+
         public Profile()
         {
             InitializeComponent();

@@ -108,7 +108,7 @@ namespace SafePass
                     if (regex.IsMatch(passSignUp.Text))
                     {
                         String passwordEncrypted = new DataEncryptPassword(passSignUp.Text).encryptData();
-                        if (database.addUserToDatabase(userSignUp.Text, emailSignUp.Text, passwordEncrypted, DateTime.Now.ToString()))
+                        if (database.addUserToDatabase(userSignUp.Text, emailSignUp.Text, passwordEncrypted, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")))
                         {
                             MessageBox.Show("User Registration Complete !","Please Login !",MessageBoxButtons.OK,MessageBoxIcon.Information);
                             this.Hide();

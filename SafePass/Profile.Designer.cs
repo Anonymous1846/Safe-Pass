@@ -38,6 +38,7 @@
             this.currentTime = new System.Windows.Forms.Label();
             this.currTime = new System.Windows.Forms.Label();
             this.startTimer = new System.Windows.Forms.Timer(this.components);
+            this.logBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // userProfileInfo
@@ -132,11 +133,27 @@
             this.startTimer.Enabled = true;
             this.startTimer.Tick += new System.EventHandler(this.startTimer_Tick);
             // 
+            // logBtn
+            // 
+            this.logBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logBtn.ForeColor = System.Drawing.Color.White;
+            this.logBtn.Location = new System.Drawing.Point(227, 226);
+            this.logBtn.Name = "logBtn";
+            this.logBtn.Size = new System.Drawing.Size(97, 31);
+            this.logBtn.TabIndex = 8;
+            this.logBtn.Text = "Logout";
+            this.logBtn.UseVisualStyleBackColor = true;
+            this.logBtn.Click += new System.EventHandler(this.logBtn_Click);
+            this.logBtn.MouseEnter += new System.EventHandler(this.logBtn_MouseEnter);
+            this.logBtn.MouseLeave += new System.EventHandler(this.logBtn_MouseLeave);
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.logBtn);
             this.Controls.Add(this.currTime);
             this.Controls.Add(this.currentTime);
             this.Controls.Add(this.lastUpdate);
@@ -164,5 +181,6 @@
         private System.Windows.Forms.Label currentTime;
         private System.Windows.Forms.Label currTime;
         private System.Windows.Forms.Timer startTimer;
+        private System.Windows.Forms.Button logBtn;
     }
 }

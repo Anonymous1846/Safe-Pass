@@ -164,7 +164,7 @@ namespace SafePass
         public System.Collections.ArrayList getUserInfoNickName(String username)
         {
             System.Collections.ArrayList arrayListForNickName = new System.Collections.ArrayList();
-            String sql_select_user_info = "SELECT nickname FROM user_passwords where username='"+username+"'";
+            String sql_select_user_info = "SELECT user_passwords.nickname from user_passwords INNER JOIN users ON users.username = user_passwords.username and users.username = '"+username+"'; ";
             using (MySqlCommand mySqlCommand = new MySqlCommand(sql_select_user_info, mySqlConnection))
             {
                 using (var usernameReader = mySqlCommand.ExecuteReader())
@@ -181,7 +181,7 @@ namespace SafePass
         public System.Collections.ArrayList getUserInfoEmailUsername(String username)
         {
             System.Collections.ArrayList arrayListEmailUsername = new System.Collections.ArrayList();
-            String sql_select_user_info = "SELECT email_username FROM user_passwords where username='" + username + "'";
+            String sql_select_user_info = "SELECT user_passwords.email_username from user_passwords INNER JOIN users ON users.username = user_passwords.username and users.username = '" + username + "'; ";
             using (MySqlCommand mySqlCommand = new MySqlCommand(sql_select_user_info, mySqlConnection))
             {
                 using (var usernameReader = mySqlCommand.ExecuteReader())
@@ -198,7 +198,7 @@ namespace SafePass
         public System.Collections.ArrayList getUserInfoPasswords(String username)
         {
             System.Collections.ArrayList arrayListForPassword = new System.Collections.ArrayList();
-            String sql_select_user_info = "SELECT password FROM user_passwords where username='" + username + "'";
+            String sql_select_user_info = "SELECT user_passwords.password from user_passwords INNER JOIN users ON users.username = user_passwords.username and users.username = '" + username + "'; ";
             using (MySqlCommand mySqlCommand = new MySqlCommand(sql_select_user_info, mySqlConnection))
             {
                 using (var usernameReader = mySqlCommand.ExecuteReader())
