@@ -35,7 +35,7 @@ namespace SafePass
             //Last Time He/She Updated the Profile !
             lastUpdate.Text = lastTime;
             //Name of the Logged in User !
-            userProfileInfo.Text = $"{username} Profile Information.";
+            userProfileInfo.Text = $"{Form1.username} Profile Information.";
         }
 
         private void editBtn_MouseEnter(object sender, EventArgs e)

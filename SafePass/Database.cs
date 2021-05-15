@@ -177,17 +177,17 @@ namespace SafePass
             }
             return arrayListForNickName;
         }
-        public Boolean checkNickName(String nickname)
+        public Boolean checkNickName(String username,String nickname)
         {
-            Boolean flag = false;
-            String sql_select_user_info = "SELECT user_passwords.nickname from user_passwords INNER JOIN users ON users.username = user_passwords.username and users.username = '" + username + "' and user_passwords.nickname = '" + nickname + "'";
-            using (MySqlCommand mySqlCommandForReading = new MySqlCommand(sql_select_user_info, mySqlConnection))
+            Boolean flag = true;
+            String selectNickname = "SELECT * from user_passwords where nickname='"+nickname+"' and username ='"+username+"';";
+            using (MySqlCommand mySqlCommandForReading = new MySqlCommand(selectNickname, mySqlConnection))
             {
                 using (var usernameReader = mySqlCommandForReading.ExecuteReader())
                 {
                     if (usernameReader.Read())
                     {
-                        flag = true;
+                        flag = false;
                     }
                 }
             }

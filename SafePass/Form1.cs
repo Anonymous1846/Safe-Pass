@@ -87,7 +87,7 @@ namespace SafePass
                     }
                     else
                     {
-                        passError.Text = "Invalid Password !";
+                        passError.Text = "Invalid Password or Username !";
                     }
                 }
                 else

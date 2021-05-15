@@ -42,7 +42,7 @@ namespace SafePass
             }
             if (!nickName.Text.Equals(String.Empty)&&!usernameAdding.Text.Equals(String.Empty) && !userPasswordAdding.Text.Equals(String.Empty))
             {
-                if (db.checkNickName(nickName.Text))
+                if (db.checkNickName(Form1.username, nickName.Text))
                 {
                     if (db.addUserPasswordToDatabase(Form1.username, nickName.Text, usernameAdding.Text, new CryptoConfig(userPasswordAdding.Text).encryptData(), DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")))
                     {
