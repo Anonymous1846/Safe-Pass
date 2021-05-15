@@ -190,6 +190,23 @@ namespace SafePass
         {
             isMouseDown = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.Black;
+            button1.BackColor = Color.White;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.White;
+            button1.BackColor = Color.Black;
+        }
         //End of Color Changing Events for Update and Delete Buttons !
     }
 }

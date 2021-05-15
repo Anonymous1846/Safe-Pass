@@ -42,6 +42,7 @@
             this.showPass = new System.Windows.Forms.LinkLabel();
             this.showConfirm = new System.Windows.Forms.LinkLabel();
             this.passwordsDontMatchLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -121,7 +122,7 @@
             this.upBtn.ForeColor = System.Drawing.Color.White;
             this.upBtn.Location = new System.Drawing.Point(186, 244);
             this.upBtn.Name = "upBtn";
-            this.upBtn.Size = new System.Drawing.Size(89, 32);
+            this.upBtn.Size = new System.Drawing.Size(90, 32);
             this.upBtn.TabIndex = 7;
             this.upBtn.Text = "Update ";
             this.upBtn.UseVisualStyleBackColor = true;
@@ -136,7 +137,7 @@
             this.delBtn.ForeColor = System.Drawing.Color.White;
             this.delBtn.Location = new System.Drawing.Point(308, 244);
             this.delBtn.Name = "delBtn";
-            this.delBtn.Size = new System.Drawing.Size(91, 32);
+            this.delBtn.Size = new System.Drawing.Size(90, 32);
             this.delBtn.TabIndex = 8;
             this.delBtn.Text = "Delete";
             this.delBtn.UseVisualStyleBackColor = true;
@@ -190,12 +191,28 @@
             this.passwordsDontMatchLabel.TabIndex = 12;
             this.passwordsDontMatchLabel.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(428, 244);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 32);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            // 
             // EdituserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(732, 453);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.passwordsDontMatchLabel);
             this.Controls.Add(this.showConfirm);
             this.Controls.Add(this.showPass);
@@ -237,5 +254,6 @@
         private System.Windows.Forms.LinkLabel showPass;
         private System.Windows.Forms.LinkLabel showConfirm;
         private System.Windows.Forms.Label passwordsDontMatchLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
