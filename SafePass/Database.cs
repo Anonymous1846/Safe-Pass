@@ -117,6 +117,7 @@ namespace SafePass
                 return flag;
         }
         //getting the User credentials like Password, email, and username !
+        
         public String [] getUserInformation(String username)
         {
             String[] userinfo = new string[4];

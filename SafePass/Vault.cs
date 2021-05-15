@@ -35,9 +35,8 @@ namespace SafePass
         {
             InitializeComponent();
             database = new Database();
-            
-           
         }
+       
         //Shows the usernam as soon as the Form Loads/user Control Loads !
         public void Vault_Load(object sender, EventArgs e)
         {

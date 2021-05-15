@@ -18,10 +18,12 @@ namespace SafePass
         //To record the current point/location
         Point offset;
         Database database;
-        public static String username = null;
+        public static String username;
         public Form1()
         {
+            
             InitializeComponent();
+           
         }
 
      
@@ -62,6 +64,7 @@ namespace SafePass
 
         private void login()
         {
+            
             //If Either password or Username is Empty of Both are empty then, red Label will show, to fill the information !
             if (usernameTextBox.Text.Equals(String.Empty))
             {
@@ -78,7 +81,9 @@ namespace SafePass
                 {
                     if (database.authForUser(usernameTextBox.Text, new CryptoConfig(passwordTextBox.Text).getHashedData()))
                     {
+                        
                         username = usernameTextBox.Text;
+                        
                         SafePassMain safePassMain = new SafePassMain();
                         this.Hide();
                         safePassMain.ShowDialog();

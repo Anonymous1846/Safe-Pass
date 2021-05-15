@@ -13,6 +13,6 @@ nickname varchar(20),
 email_username varchar(30),
 password varchar(100),
 time_stamp datetime,
-primary key(passwd_id,username),
+primary key(passwd_id,username,nickname),
 foreign key(username) references safepass.users(username) on delete cascade
 );

@@ -142,7 +142,7 @@
             this.logBtn.Name = "logBtn";
             this.logBtn.Size = new System.Drawing.Size(97, 31);
             this.logBtn.TabIndex = 8;
-            this.logBtn.Text = "Logout";
+            this.logBtn.Text = "Exit";
             this.logBtn.UseVisualStyleBackColor = true;
             this.logBtn.Click += new System.EventHandler(this.logBtn_Click);
             this.logBtn.MouseEnter += new System.EventHandler(this.logBtn_MouseEnter);

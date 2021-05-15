@@ -35,7 +35,8 @@ namespace SafePass
             //Last Time He/She Updated the Profile !
             lastUpdate.Text = lastTime;
             //Name of the Logged in User !
-            userProfileInfo.Text = $"{Form1.username} Profile Information.";
+            
+            userProfileInfo.Text = $"{username} Profile Information.";
         }
 
         private void editBtn_MouseEnter(object sender, EventArgs e)
@@ -61,9 +62,9 @@ namespace SafePass
         //when the user clicks this btn, the parent form of the widget closes and login form is invoked !
         private void logBtn_Click(object sender, EventArgs e)
         {
-            this.ParentForm.Hide();
-            Form1 login = new Form1();
-            login.ShowDialog();
+
+            System.Environment.Exit(0);
+            
         }
 
         private void logBtn_MouseLeave(object sender, EventArgs e)

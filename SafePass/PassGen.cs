@@ -42,7 +42,19 @@ namespace SafePass
         private void copyToClipBoard_Click(object sender, EventArgs e)
         {
             //The Newly Genrated Password Will be Copied to the ClipBoard !
-            Clipboard.SetText(generatedPasswordTextBox.Text);
+            string copyText = generatedPasswordTextBox.Text;
+            if (copyText == null || copyText.Length<8)
+            {
+                MessageBox.Show("Password is either null or not strong enough !! ", "Error !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                Clipboard.SetText(copyText);
+                MessageBox.Show("Password copied to clipboard ! ", "Password Copied!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
 
         }
 
