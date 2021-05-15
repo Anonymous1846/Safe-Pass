@@ -67,12 +67,13 @@ namespace SafePass
                     this.Hide();
                     //Hides the Safepass Main Windows, whose Profile is User Control is The Child Level Entity
                     ((Form)Profile.ProfileInstance.TopLevelControl).Hide();
-                    Form1 from = new Form1();
+                   
                     //Closing Both Forms and User Control !
                     ((Form)Profile.ProfileInstance.TopLevelControl).Close();
                     this.Close();
                     //Shows The Form Dialog Box i.e the Login !
-                    from.ShowDialog();
+                    MessageBox.Show("Please Login Again !", "Updation Success !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
 
                 else
